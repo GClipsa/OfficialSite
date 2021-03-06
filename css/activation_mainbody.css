@@ -1,0 +1,75 @@
+/* Убираем внешние отступы */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,a {
+	padding: 0;
+ 	margin: 0;
+}
+html,body{
+	height: 100%;
+}
+*,*:before,*:after{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.main_body{
+	display: grid;
+	margin: 10px 0;
+	grid-template-columns:1fr;
+	grid-template-rows: minmax(100px, max-content);
+	grid-template-areas: 
+	"container1";
+}
+.container1{
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: 
+	"head"
+	"body"
+	"foot";
+}
+
+.welcome_box{
+	grid-area: head;
+	text-align: center;
+	height: 7.5vw;
+
+	background: url(../svg/title_index_1.svg) 50% 50% no-repeat fixed;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+.welcome_text{
+	font-size: 3.85vw;
+	margin-top: 1.45vw;
+	color: white;
+	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+}
+.familiar_box{
+	grid-area: body;
+	margin-top: 1%;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns:5% 1fr 5%;
+	grid-template-areas: 
+	"buffl center buffr";
+}
+.familiar_box_items{
+	grid-area: center;
+	display: grid;
+	grid-template-columns:20% 60% 20%;
+	grid-template-areas:
+	"left center right";
+	/*background-color: darkgray;*/
+	text-align: center;
+}
+.сongratulations{
+	grid-area: center;
+	background: linear-gradient(-60deg, #b04343 31%, #951d1d 50%, #eb7171 65%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	font-size: 3vw;
+	font-family: "Oswald";
+}

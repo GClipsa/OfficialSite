@@ -1,0 +1,1306 @@
+/* Убираем внешние отступы */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,a {
+	padding: 0;
+ 	margin: 0;
+}
+html,body{
+	height: 100%;
+}
+*,*:before,*:after{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.main_body{
+	display: grid;
+	margin: 10px 0;
+	grid-template-columns:1fr;
+	grid-template-rows: minmax(100px, max-content);
+	grid-template-areas: 
+	"container1";
+}
+.container1{
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: 
+	"head"
+	"body"
+	"foot";
+}
+
+.welcome_box{
+	grid-area: head;
+	text-align: center;
+	height: 7.5vw;
+
+	background: url(../svg/title_index_1.svg) 50% 50% no-repeat fixed;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+.welcome_text{
+	font-size: 3.85vw;
+	margin-top: 1.45vw;
+	color: white;
+	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+}
+.familiar_box{
+	grid-area: body;
+	margin-top: 1%;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns:5% 1fr 5%;
+	grid-template-areas: 
+	"buffl center buffr";
+}
+.familiar_box_items{
+	grid-area: center;
+	display: grid;
+	grid-template-columns:20% 60% 20%;
+	grid-template-areas:
+	"left center right";
+	/*background-color: darkgray;*/
+}
+/*-----------------------------------------------PanelChoose*/
+.panel_choose{
+	grid-area: center;
+	/*display: none;*/
+}
+.choose_text{
+	text-align: center;
+}
+.choose_text p{
+	color: #a34c4c;
+	font-size: 2.5vw;
+}
+.variant{
+	display: grid;
+	grid-template-columns:45% 10% 45%;
+	grid-template-areas: 
+	"left buffc right";
+	text-align: center;
+	margin-top: 2%;
+}
+.auth{
+	grid-area: left;
+	background-color: #521e1e;
+	border: 4px solid #8c5858;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+}
+.auth:hover{
+	background-color: #621e1e;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+.auth:active{
+	background-color: #521e1e;
+	transition-property: background-color;
+  	transition-duration: 0.0005s;
+}
+.auth p{
+	color: #fff;
+	font-size: 2.3vw;
+}
+.auth_pic{
+ 	width: 40%;
+}
+.reg{
+	grid-area: right;
+	background-color: #521e1e;
+	border: 4px solid #8c5858;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+}
+.reg:hover{
+	background-color: #621e1e;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+.reg:active{
+	background-color: #521e1e;
+	transition-property: background-color;
+  	transition-duration: 0.0005s;
+}
+.reg p{
+	color: #fff;
+	font-size: 2.3vw;
+}
+.reg_pic{
+	width: 40%;
+}
+/*-----------------------------------------------AuthPanel*/
+.auth_panel{
+	display: none;
+	grid-area: center;
+	background-color: #521e1e;
+	border: 4px solid #8c5858;
+	text-align: center;
+}
+.auth_text{
+	display: grid;
+	grid-template-columns:5% 90% 5%;
+	grid-template-areas: 
+	"back text buffr";
+}
+.auth_text_pic{
+	width: 2.3vw;
+	margin-left: 5px;
+	grid-area: back;
+}
+.auth_text_pic:hover{
+	opacity: .6;
+	cursor: pointer;
+}
+.auth_text p{
+	color: #fff;
+	font-size: 2.3vw;
+	grid-area: text;
+}
+.auth_panel input{
+	font-size: 1.6vw;
+	background-color: #521e1e;
+	border: 2px solid #8c5858;
+	width: 60%;
+	font-family: "Oswald";
+	color: #fff;
+	padding-left: 5px;
+}
+
+.auth_login{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}	
+.auth_login_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+.auth_pass{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}
+.auth_pass_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.auth_submit{
+	display: flex;
+	justify-content: center;
+}
+.auth_submit_btn{
+	font-size: 2.3vw;
+	background-color: #6b2828;
+	border: 2px solid #8c5858;
+	color: #fff;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 40%;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	font-family: "Bebas Neue";
+  	padding-left: 0px;
+}
+.auth_submit_btn:hover{
+	background-color: #7b2828;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+.auth_forget{
+	display: grid;
+	margin-bottom: 3%;
+	justify-items: center;
+}
+.forget_pass{
+	font-size: 1.2vw;
+	background-color: #6b2828;
+	border: 2px solid #8c5858;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+	color: #fff;
+	width: 40%;
+
+}
+.forget_pass:hover{
+	background-color: #7b2828;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+/*WARNINGS*/
+.auth_login_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.auth_login_warn p{
+	display: none;
+	padding-left: 5px;
+	font-size: 1.0vw;
+	color: orange;
+}
+.auth_pass_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.auth_pass_warn p{
+	display: none;
+	padding-left: 5px;
+	color: orange;
+	font-size: 1.0vw;
+}
+/*-----------------------------------------------RegPanel*/
+.reg_panel{
+	display: none;
+	grid-area: center;
+	background-color: #521e1e;
+	border: 4px solid #8c5858;
+	text-align: center;
+	margin-bottom: 3%;
+}
+.reg_text{
+	display: grid;
+	grid-template-columns:5% 90% 5%;
+	grid-template-areas: 
+	"back text buffr";
+}
+.reg_text_pic{
+	width: 2.3vw;
+	margin-left: 5px;
+	grid-area: back;
+}
+.reg_text_pic:hover{
+	opacity: .6;
+	cursor: pointer;
+}
+.reg_text p{
+	color: #fff;
+	font-size: 2.3vw;
+	grid-area: text;
+}
+.reg_panel input{
+	font-size: 1.6vw;
+	background-color: #521e1e;
+	border: 2px solid #8c5858;
+	width: 60%;
+	font-family: "Oswald";
+	color: #fff;
+	padding-left: 5px;
+}
+.reg_login{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}	
+.reg_login_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.reg_email{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}	
+.reg_email_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.reg_pass{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}
+.reg_pass_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.reg_repass{
+	display: flex;
+	/*background-color: gray;*/
+	justify-content: center;
+	/*margin-top:3%;*/
+}
+.reg_repass_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.reg_submit{
+	display: flex;
+	justify-content: center;
+}
+.reg_submit_btn{
+	font-size: 2.3vw;
+	background-color: #6b2828;
+	border: 2px solid #8c5858;
+	color: #fff;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 40%;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	font-family: "Bebas Neue";
+  	padding-left: 0px;
+}
+.reg_submit_btn:hover{
+	background-color: #7b2828;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+
+/*WARNINGS*/
+.reg_login_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.reg_login_warn p{
+	display: none;
+	padding-left: 5px;
+	font-size: 1.0vw;
+	color: orange;
+}
+.reg_email_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.reg_email_warn p{
+	display: none;
+	padding-left: 5px;
+	font-size: 1.0vw;
+	color: orange;
+}
+.reg_pass_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.reg_pass_warn p{
+	display: none;
+	padding-left: 5px;
+	color: orange;
+	font-size: 1.0vw;
+}
+.reg_repass_warn{
+	width: 60%;
+	margin-top:3%;
+	margin-left: 12vw;
+	display: flex;
+  	text-align: left;
+}
+.reg_repass_warn p{
+	display: none;
+	padding-left: 5px;
+	color: orange;
+	font-size: 1.0vw;
+}
+
+@media (max-width: 1200px){
+	.familiar_box_items{
+		grid-template-columns:15% 70% 15%;
+		grid-template-areas:
+		"left center right"
+	}
+	.choose_text p{
+		font-size: 4vw;
+	}
+	.variant{
+		grid-template-columns:45% 10% 45%;
+		grid-template-areas: 
+		"left buffc right";
+	}
+	.auth p{
+		color: #fff;
+		font-size: 3vw;
+	}
+	.auth_pic{
+	 	width: 40%;
+	}
+	.reg p{
+		color: #fff;
+		font-size: 3vw;
+	}
+	.reg_pic{
+		width: 40%;
+	}
+	/*---------------------------------------auth*/
+	.auth_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.auth_text_pic{
+		width: 5vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.auth_text_pic:hover{
+		opacity: .6;
+		cursor: pointer;
+	}
+	.auth_text p{
+		color: #fff;
+		font-size: 5vw;
+		grid-area: text;
+	}
+	.auth_panel input{
+		font-size: 2.5vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+
+	.auth_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+		margin-bottom: 1.5%;
+	}	
+	.auth_login_pic{
+		width: 3.5vw;
+		margin-right: 5px;
+	}
+	.auth_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-bottom: 1.5%;
+		margin-top:1.5%;
+	}
+	.auth_pass_pic{
+		width: 3.5vw;
+		margin-right: 5px;
+	}
+
+	.auth_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.auth_submit_btn{
+		font-size: 2.5vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 2.5%;
+		margin-bottom: 1.5%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	.auth_forget{
+		display: grid;
+		margin-bottom: 1.5%;
+		justify-items: center;
+	}
+	.forget_pass{
+		font-size: 1.5vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+		color: #fff;
+		width: 50%;
+	}
+	/*---------------------------------------registration*/
+	.reg_panel{
+		display: none;
+		grid-area: center;
+		background-color: #521e1e;
+		border: 4px solid #8c5858;
+		text-align: center;
+		margin-bottom: 1.5%;
+	}
+	.reg_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.reg_text_pic{
+		width: 5vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.reg_text p{
+		color: #fff;
+		font-size: 5vw;
+		grid-area: text;
+	}
+	.reg_panel input{
+		font-size: 2.5vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+	.reg_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+	}	
+	.reg_login_pic{
+		width: 2.5vw;
+		margin-right: 5px;
+	}
+
+	.reg_email{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:1%;
+	}	
+	.reg_email_pic{
+		width: 2.5vw;
+		margin-right: 5px;
+	}
+
+	.reg_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:1%;
+	}
+	.reg_pass_pic{
+		width: 2.5vw;
+		margin-right: 5px;
+	}
+
+	.reg_repass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:1%;
+	}
+	.reg_repass_pic{
+		width: 2.5vw;
+		margin-right: 5px;
+	}
+
+	.reg_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.reg_submit_btn{
+		font-size: 2.5vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 3%;
+		margin-bottom: 1.5%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	/*WARNINGS*/
+	.reg_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 10.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 1.5vw;
+		color: orange;
+	}
+	.reg_email_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 10.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_email_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 1.5vw;
+		color: orange;
+	}
+	.reg_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 10.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 1.5vw;
+	}
+	.reg_repass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 10.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_repass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 1.5vw;
+	}
+	/*WARNINGS*/
+	.auth_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 11vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 1.5vw;
+		color: orange;
+	}
+	.auth_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 11vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 1.5vw;
+	}
+}
+
+@media (max-width: 768px){
+	.familiar_box_items{
+		grid-template-columns:10% 80% 10%;
+		grid-template-areas:
+		"left center right"
+	}
+	.choose_text p{
+		font-size: 5vw;
+	}
+	.variant{
+		grid-template-columns:45% 10% 45%;
+		grid-template-areas: 
+		"left buffc right";
+	}
+	.auth p{
+		color: #fff;
+		font-size: 4vw;
+	}
+	.auth_pic{
+	 	width: 40%;
+	}
+	.reg p{
+		color: #fff;
+		font-size: 4vw;
+	}
+	.reg_pic{
+		width: 40%;
+	}
+
+	/*---------------------------------------auth*/
+	.auth_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.auth_text_pic{
+		width: 6vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.auth_text_pic:hover{
+		opacity: .6;
+		cursor: pointer;
+	}
+	.auth_text p{
+		color: #fff;
+		font-size: 6vw;
+		grid-area: text;
+	}
+	.auth_panel input{
+		font-size: 3vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+
+	.auth_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+		margin-bottom: 3%;
+	}	
+	.auth_login_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+	.auth_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-bottom: 3%;
+		margin-top:3%;
+	}
+	.auth_pass_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+
+	.auth_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.auth_submit_btn{
+		font-size: 3vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 5%;
+		margin-bottom: 3%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	.auth_forget{
+		display: grid;
+		margin-bottom: 3%;
+		justify-items: center;
+	}
+	.forget_pass{
+		font-size: 2vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+		color: #fff;
+		width: 50%;
+	}
+	/*---------------------------------------registration*/
+	.reg_panel{
+		display: none;
+		grid-area: center;
+		background-color: #521e1e;
+		border: 4px solid #8c5858;
+		text-align: center;
+		margin-bottom: 3%;
+	}
+	.reg_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.reg_text_pic{
+		width: 6vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.reg_text p{
+		color: #fff;
+		font-size: 6vw;
+		grid-area: text;
+	}
+	.reg_panel input{
+		font-size: 3vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+	.reg_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+	}	
+	.reg_login_pic{
+		width: 3vw;
+		margin-right: 5px;
+	}
+
+	.reg_email{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}	
+	.reg_email_pic{
+		width: 3vw;
+		margin-right: 5px;
+	}
+
+	.reg_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}
+	.reg_pass_pic{
+		width: 3vw;
+		margin-right: 5px;
+	}
+
+	.reg_repass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}
+	.reg_repass_pic{
+		width: 3vw;
+		margin-right: 5px;
+	}
+
+	.reg_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.reg_submit_btn{
+		font-size: 3vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 6%;
+		margin-bottom: 3%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	/*WARNINGS*/
+	.reg_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 2vw;
+		color: orange;
+	}
+	.reg_email_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_email_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 2vw;
+		color: orange;
+	}
+	.reg_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 2vw;
+	}
+	.reg_repass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_repass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 2vw;
+	}
+	/*WARNINGS*/
+	.auth_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 2vw;
+		color: orange;
+	}
+	.auth_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 12.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 2vw;
+	}
+}
+
+@media (max-width: 425px){
+	.familiar_box_items{
+		grid-template-columns:2.5% 95% 2.5%;
+		grid-template-areas:
+		"left center right"
+	}
+
+	.choose_text p{
+		font-size: 7vw;
+	}
+	.variant{
+		grid-template-columns:100%;
+		grid-template-rows:45% 10% 45%;
+		grid-template-areas: 
+		"left" 
+		"buffc" 
+		"right";
+	}
+	.auth{
+		height: 110%;
+	}
+	.auth p{
+		color: #fff;
+		font-size: 6vw;
+	}
+	.auth_pic{
+	 	width: 30%;
+	}
+	.reg{
+		height: 110%;
+	}
+	.reg p{
+		color: #fff;
+		font-size: 6vw;
+	}
+	.reg_pic{
+		width: 30%;
+	}
+	/*---------------------------------------auth*/
+	.auth_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.auth_text_pic{
+		width: 7vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.auth_text_pic:hover{
+		opacity: .6;
+		cursor: pointer;
+	}
+	.auth_text p{
+		color: #fff;
+		font-size: 7vw;
+		grid-area: text;
+	}
+	.auth_panel input{
+		font-size: 4vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+
+	.auth_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+		margin-bottom: 3%;
+	}	
+	.auth_login_pic{
+		width: 5vw;
+		margin-right: 5px;
+	}
+	.auth_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-bottom: 3%;
+		margin-top:3%;
+	}
+	.auth_pass_pic{
+		width: 5vw;
+		margin-right: 5px;
+	}
+
+	.auth_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.auth_submit_btn{
+		font-size: 4vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 5%;
+		margin-bottom: 3%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	.auth_forget{
+		display: grid;
+		margin-bottom: 3%;
+		justify-items: center;
+	}
+	.forget_pass{
+		font-size: 3vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+		color: #fff;
+		width: 50%;
+	}
+	/*---------------------------------------registration*/
+	.reg_panel{
+		display: none;
+		grid-area: center;
+		background-color: #521e1e;
+		border: 4px solid #8c5858;
+		text-align: center;
+		margin-bottom: 3%;
+	}
+	.reg_text{
+		display: grid;
+		grid-template-columns:5% 90% 5%;
+		grid-template-areas: 
+		"back text buffr";
+	}
+	.reg_text_pic{
+		width: 7vw;
+		margin-left: 5px;
+		grid-area: back;
+	}
+	.reg_text p{
+		color: #fff;
+		font-size: 7vw;
+		grid-area: text;
+	}
+	.reg_panel input{
+		font-size: 4vw;
+		background-color: #521e1e;
+		border: 2px solid #8c5858;
+		width: 70%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+	.reg_login{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		/*margin-top:3%;*/
+	}	
+	.reg_login_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+
+	.reg_email{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}	
+	.reg_email_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+
+	.reg_pass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}
+	.reg_pass_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+
+	.reg_repass{
+		display: flex;
+		/*background-color: gray;*/
+		justify-content: center;
+		margin-top:3%;
+	}
+	.reg_repass_pic{
+		width: 4vw;
+		margin-right: 5px;
+	}
+
+	.reg_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.reg_submit_btn{
+		font-size: 4vw;
+		background-color: #6b2828;
+		border: 2px solid #8c5858;
+		color: #fff;
+		margin-top: 6%;
+		margin-bottom: 3%;
+		width: 50%;
+		transition-property: background-color;
+	  	transition-duration: 0.2s;
+	  	font-family: "Bebas Neue";
+	  	padding-left: 0px;
+	}
+	/*WARNINGS*/
+	.reg_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 3vw;
+		color: orange;
+	}
+	.reg_email_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_email_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 3vw;
+		color: orange;
+	}
+	.reg_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 3vw;
+	}
+	.reg_repass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.reg_repass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 3vw;
+	}
+	/*WARNINGS*/
+	.auth_login_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_login_warn p{
+		display: none;
+		padding-left: 5px;
+		font-size: 3vw;
+		color: orange;
+	}
+	.auth_pass_warn{
+		width: 60%;
+		margin-top:3%;
+		margin-left: 14.5vw;
+		display: flex;
+	  	text-align: left;
+	}
+	.auth_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 3vw;
+	}
+}

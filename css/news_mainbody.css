@@ -1,0 +1,334 @@
+/* Убираем внешние отступы */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,a {
+	padding: 0;
+ 	margin: 0;
+}
+html,body{
+	height: 100%;
+}
+*,*:before,*:after{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.main_body{
+	display: grid;
+	margin: 10px 0;
+	grid-template-columns:1fr;
+	grid-template-rows: minmax(100px, max-content);
+	grid-template-areas: 
+	"container1"
+}
+.container1{
+	display: grid;
+	grid-template-rows: auto-fit auto-fit auto-fit;
+	grid-template-areas: 
+	"head"
+	"body"
+	"changer";
+}
+
+.welcome_box{
+	grid-area: head;
+	text-align: center;
+	height: 7.5vw;
+
+	background: url(../svg/title_index_1.svg) 50% 50% no-repeat fixed;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+.welcome_text{
+	font-size: 3.85vw;
+	margin-top: 1.45vw;
+	color: white;
+	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+}
+.familiar_box{
+	grid-area: body;
+	margin-top: 1%;
+	display: grid;
+	grid-template-columns:10% 1fr 10%;
+	grid-template-areas: 
+	"buffl center buffr";
+}
+.familiar_box_items{
+	grid-area: center;
+	display: grid;
+	grid-gap: 1vw;
+	grid-auto-rows: calc((80vw) * (320/1720));
+	grid-template-columns: repeat(3, auto);
+	/*background-color: darkgray;*/
+}
+.familiar_box_item{
+	position: relative;
+	padding-bottom: 55.25%; /*(если 4:3 — поставьте 75%) */
+	height: 0;
+	border: 3px solid;
+	border-color: #8c5858;
+	transition-property: transform;
+  	transition-duration: 0.2s;
+  	/*background-color: gray;*/
+}
+.familiar_box_item_pic{
+	display: grid;
+	grid-template-areas: 
+	"overlay";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-width: 0;
+	outline-width: 0;
+}
+.familiar_box_item:hover{
+	transform: scale(1.04);
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+.familiar_box_item_overlay{
+	grid-area: overlay;
+	position: absolute;
+	background-color: #b04343;
+	width: 100%;
+	height: 0%;
+	opacity: 95%;
+	transition: .2s ease;
+	overflow: hidden;
+}
+.familiar_box_item_overlay_text{
+	text-align: center;
+	color: white;
+  	font-size: 1.1vw;
+  	height: 100%;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;	
+  	/*background-color: gray;*/
+}
+.familiar_box_item_overlay_text p {
+    margin: 0 ;
+    font-family: "Oswald";
+}
+.familiar_box_item:hover .familiar_box_item_overlay{
+  height: 100%;
+  transition: .2s ease;
+}
+
+.changer{
+	grid-area: changer;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	display: grid;
+	grid-template-columns: 25% 2fr 1fr 0.5fr 0.5fr 0.5fr 1fr 2fr 25%;
+	grid-template-areas: 
+	"buffl nextn left lcenter center rcenter right lastn buffr";
+	/*background-color: gray;*/
+	text-align: center;
+}
+
+.next_news{
+	grid-area: lastn;
+	height: 100%;
+	background: url(../svg/pregnext.svg) 50% 50% no-repeat fixed;
+    /*background-size: 100%;*/
+    background-attachment: scroll;
+    /*background-color: lightgray;*/
+    display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+.next_news_text{
+	font-size: 2vw;
+	/*margin-top: 0.35vw;*/
+	color: white;
+	background: white;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+	margin: auto 0;
+}
+
+.next_news:hover{
+	opacity: 60%;
+	cursor: pointer;
+}
+
+.nums{
+	margin: auto;
+	color: white;
+  	font-size: 2vw;
+}
+.start_num{
+	grid-area: lcenter;
+}
+.dots_num{
+	grid-area: center;
+}
+.end_num{
+	grid-area: rcenter;
+}
+
+.prev_news{
+	grid-area: nextn;
+	height: 100%;
+	background: url(../svg/pregnext.svg) 50% 50% no-repeat fixed;
+    /*background-size: 100%;*/
+    background-attachment: scroll;
+    /*background-color: lightgray;*/
+    display: flex;
+  	align-items: center;
+  	justify-content: center;
+
+}
+
+.prev_news:hover{
+	opacity: 60%;
+	cursor: pointer;
+}
+
+.prev_news_text{
+	font-size: 2vw;
+	/*margin-top: 0.35vw;*/
+	color: white;
+	background: white;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+	margin: auto 0;
+}
+
+.changer_left{
+	grid-area: left;
+}
+.changer_right{
+	grid-area: right;
+}
+.changer_pic{
+	max-width: 35%;
+	margin-top: 0.5em;
+}
+.changer_pic:hover{
+	opacity: 60%;
+	cursor: pointer;
+}
+
+@media (max-width: 1200px){
+
+	.changer{
+		grid-template-columns: 20% 3fr 1fr 0.5fr 0.5fr 0.5fr 1fr 3fr 20%;
+		grid-template-areas: 
+		"buffl nextn left lcenter center rcenter right lastn buffr";
+	}
+
+	.familiar_box{
+		grid-template-columns:5% 1fr 5%;
+		grid-template-areas: 
+		"buffl center buffr";
+	}
+	.familiar_box_items{
+		/*grid-gap: 10px;*/
+		grid-auto-rows: calc((90vw) * (320/1720));
+	}
+
+	.prev_news_text{
+		font-size: 3vw;
+	}
+
+	.next_news_text{
+		font-size: 3vw;
+	}
+
+	.nums{
+		margin: auto;
+		font-size: 3vw;
+	}
+
+	.changer{
+		margin-top: 5%;
+	}
+	.changer_pic{
+		max-width: 60%;
+	}
+	.familiar_box_item_overlay_text{
+	  	font-size: 1.2vw;
+  	}
+}
+
+@media (max-width: 768px){
+	.familiar_box{
+		grid-template-columns:3% 1fr 3%;
+		grid-template-areas: 
+		"buffl center buffr";
+	}
+	.familiar_box_items{
+		grid-gap: 2.7vw;
+		grid-auto-rows: calc((145vw) * (320/1720));
+		grid-template-columns: repeat(2, auto);
+	}
+	.changer{
+		margin-top: 5%;
+		grid-template-columns: 3fr 5% 1fr 0.5fr 0.5fr 0.5fr 1fr 5% 3fr;
+		grid-template-areas: 
+		"nextn buffl left lcenter center rcenter right buffr lastn";
+	}
+
+	.prev_news{
+		grid-area: nextn;
+		text-align: center;
+		height: 100%;
+		background: url(../svg/pregnext.svg) 50% 50% no-repeat fixed;
+    	/*background-size: 100%;*/
+    	background-attachment: scroll;
+    	/*background-color: lightgray;*/
+	}
+
+	.next_news{
+		grid-area: lastn;
+		text-align: center;
+		height: 100%;
+		background: url(../svg/pregnext.svg) 50% 50% no-repeat fixed;
+    	/*background-size: 100%;*/
+    	background-attachment: scroll;
+    	/*background-color: lightgray;*/
+	}
+	.prev_news_text{
+		font-size: 5vw;
+	}
+
+	.next_news_text{
+		font-size: 5vw;
+	}
+
+	.nums{
+		margin: auto;
+		font-size: 5vw;
+	}
+	.changer_pic{
+		max-width: 80%;
+	}
+	.familiar_box_item_overlay_text{
+	  	font-size: 1.9vw;
+  	}
+}
+@media (max-width: 425px){
+	.familiar_box{
+		margin-top: 4%;
+		grid-template-columns:8% 1fr 8%;
+		grid-template-areas: 
+		"buffl center buffr";
+	}
+	.familiar_box_items{
+		grid-gap: 2.7vw;
+		grid-auto-rows: calc((290vw) * (320/1720));
+		grid-template-columns: repeat(1, auto);
+	}
+	.familiar_box_item_overlay_text{
+	  	font-size: 3.5vw;
+  	}
+}

@@ -1,0 +1,212 @@
+/* Убираем внешние отступы */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,a {
+	padding: 0;
+ 	margin: 0;
+}
+html,body{
+	height: 100%;
+}
+*,*:before,*:after{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+.main_body{
+	display: grid;
+	margin: 10px 0;
+	grid-template-columns:1fr;
+	grid-template-rows: minmax(100px, max-content);
+	grid-template-areas: 
+	"container1";
+}
+.container1{
+	display: grid;
+	grid-template-rows: auto-fit auto-fit auto-fit;
+	grid-template-areas: 
+	"head"
+	"body"
+	"foot";
+}
+
+.welcome_box{
+	grid-area: head;
+	text-align: center;
+	height: 7.5vw;
+
+	background: url(../svg/title_index_1.svg) 50% 50% no-repeat fixed;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+.welcome_text{
+	font-size: 3.85vw;
+	margin-top: 1.45vw;
+	color: white;
+	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	/*background-color: lightgray;*/
+}
+.familiar_box{
+	grid-area: body;
+	margin-top: 2%;
+	display: grid;
+	grid-template-rows: auto-fit;
+	grid-template-columns:5% 1fr 5%;
+	grid-template-areas: 
+	"buffl center buffr";
+}
+.familiar_box_items{
+	grid-area: center;
+	display: grid;
+	grid-template-columns:1fr 5% 1fr;
+	grid-template-areas: 
+	"left center right";
+	/*background-color: darkgray;*/
+}
+.familiar_box_item_describe{
+	grid-area: left;
+	text-align: center;
+	margin: auto 0;
+}
+
+.describe_folus{
+	font-size: 30px;
+	/*font-family: "Oswald";*/
+	color: white;
+	/*background-color: gray;*/
+}
+.undrln_small{
+ 	height: 9px;
+ 	width: calc(100% / 2.2);
+}
+.ungrline_small{
+	margin-bottom: 5%;
+}
+.describe_project{
+	font-size: 25px;
+	font-family: "Oswald";
+	color: white;
+	max-width: 90%;
+	margin: auto;
+}
+.ungrline_big{
+	/*background-color: gray;*/
+	margin-top: 5%;
+}
+
+.undrln_big{
+ 	height: 9px;
+ 	width: calc(100% / 1.1);
+}
+
+/*=============================================VID PIC*/
+.familiar_box_item_box{
+	grid-area: right;
+	margin: auto 0;
+}
+.familiar_box_item_box_vidpic{
+	/*background-color: gray;*/
+	position: relative;
+	padding-bottom: 55.25%; /*(если 4:3 — поставьте 75%) */
+	height: 0;
+	overflow: hidden;
+	border: 9px solid;
+	border-color: #8c5858;
+}
+.familiar_box_item_box_vidpic_item{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-width: 0;
+	outline-width: 0;
+}
+@media (max-width: 1500px){
+	.describe_folus{
+		font-size: 25px;
+	}
+	.describe_project{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1200px){
+	.describe_folus{
+		font-size: 20px;
+	}
+	.describe_project{
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 1000px){
+	.undrln_small{
+ 		height: 4.5px;
+ 	}
+ 	.undrln_big{
+ 		height: 4.5px;
+ 	}
+ 	.familiar_box_item_box_vidpic{
+ 		border: 4.5px solid;
+ 		border-color: #8c5858;
+ 	}
+}
+
+@media (max-width: 768px){
+	
+	.familiar_box_items{
+		grid-area: center;
+		display: grid;
+		grid-template-columns:1fr;
+		grid-template-rows: auto-fit auto-fit;
+		grid-template-areas: 
+		"upper"
+		"downer";
+	}
+	.describe_folus{
+		font-size: 25px;
+	}
+	.describe_project{
+		font-size: 20px;
+	}
+	.familiar_box_item_describe{
+		grid-area: upper;
+		text-align: center;
+		margin: 0;
+	}
+	.familiar_box_item_box{
+		grid-area: downer;
+		margin: 0;
+		margin:5% 0;
+	}
+	.ungrline_small{
+		margin-bottom: 2%;
+	}
+	.ungrline_big{
+		margin-top: 2%;
+	}
+
+	.undrln_small{
+ 		height: 2.5px;
+ 	}
+ 	.undrln_big{
+ 		height: 2.5px;
+ 	}
+ 	.familiar_box_item_box_vidpic{
+ 		border: 2.5px solid;
+ 		border-color: #8c5858;
+ 	}
+
+}
+@media (max-width: 425px){
+	.describe_folus{
+		font-size: 20px;
+	}
+	.describe_project{
+		font-size: 15px;
+	}
+}
