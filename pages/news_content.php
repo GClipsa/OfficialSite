@@ -124,6 +124,7 @@
 		<div class="footer">
 			<p> &copy; GCLIPSA / 2021 </p>
 		</div>
+		
 	</div>
 </BODY>
 <!-- JS -->
