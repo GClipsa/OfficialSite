@@ -190,7 +190,7 @@
 			<p></p>
 		</div>
 		<div class="footer">
-			<p> &copy; GClipsa / DOKERcom / 2021 </p>
+			<p> &copy; GCLIPSA / 2021 </p>
 		</div>
 	</div>
 </BODY>

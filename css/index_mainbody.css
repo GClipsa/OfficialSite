@@ -64,7 +64,6 @@ html,body{
 	width: 90%;
 	/*background-color: gray;*/
 	margin: auto 0;
-
 }
 .video{
 	/*background-color: gray;*/
@@ -97,27 +96,27 @@ html,body{
     background-attachment: scroll;
 }
 .schema_folus{
-	font-size: 30px;
+	font-size: 1.5vw;
 	font-family: "Oswald";
 	color: white;
 /*	background-color: gray;*/
 }
 .undrln_small{
- 	height: 9px;
+ 	height: 0.5vw;
  	width: calc(100% / 2.2);
 
 }
 .schema_project{
-	font-size: 25px;
+	font-size: 1.3vw;
 	font-family: "Oswald";
 	color: white;
 }
 .undrln_big{
- 	height: 9px;
+ 	height: 0.5vw;
  	width: calc(100% / 1.1);
 }
 .schema_pic{
-	margin: 20px 0 0 0;
+	margin: 0.7vw 0 0 0;
 	max-width: 100%;
 }
 .schema_pic_img{
@@ -143,7 +142,6 @@ html,body{
 	grid-area: head;
 	text-align: center;
 	height: 5vw;
-
 	background: url(../svg/title_index_2.svg) 50% 50% no-repeat fixed;
     background-size: 100%;
     background-attachment: scroll;
@@ -310,16 +308,15 @@ html,body{
 	max-width: 60%;
 	margin: 0 auto;
 	/*background-color: lightgray;*/
-
 }
 .devtext_irr_ungrline{padding: 8px 0;}
 .devtext_irr_ungrline_pic{
- 	height: 9px;
+ 	height: 0.5vw;
  	width: calc(100% / 3);
 }
 .devtext_cre_ungrline{padding: 8px 0;}
 .devtext_cre_ungrline_pic{
- 	height: 9px;
+ 	height: 0.5vw;
  	width: calc(100% / 1.5);
 }
 
@@ -345,7 +342,7 @@ html,body{
  	/*background-color: gray;*/
 }
 .dev_slider .slick-slide{
-	padding: 0 15px;
+	padding: 0 1vw;
 }
 .dev_slider .slick-list{
 	overflow: hidden;
@@ -378,8 +375,156 @@ html,body{
 }
 
 /*=========================================================MEDIA*/
-@media (max-width: 1300px){
+
+@media (max-width: 1200px){
+	.about_ungrline{
+		padding: 1vw 0 1vw 0;
+	}
 	.schema_folus{
+		font-size: 2.5vw;
+	}
+	.schema_project{
+		font-size: 2vw;
+	}
+	.devtext_irr_ungrline{padding: 0px 0;}
+	.devtext_cre_ungrline{padding: 0px 0;}
+
+	.schema_pic{
+		margin: 0 0 0 0;
+	}
+	.video{
+		border: 4px solid;
+		border-color: #8c5858;
+	}
+
+	.lastnews{
+		grid-area: lastnews;
+		display: grid;
+		grid-template-rows:1fr;
+		grid-template-columns:15% 70% 15%;
+		grid-template-areas: 
+		"bfl slider bfr";
+	    background-size: 104%;
+	}
+}
+
+@media (max-width: 768px){
+	.about_ungrline{
+		padding: 0 0 0 0;
+		margin-bottom: 1vw;
+	}
+	.schema_folus{
+		font-size: 2.5vw;
+	}
+	.schema_project{
+		font-size: 2vw;
+	}
+	.devtext_irr_ungrline{padding: 0px 0;}
+	.devtext_cre_ungrline{padding: 0px 0;}
+
+	.schema_pic{
+		margin: 0 0 0 0;
+	}
+	.video{
+		border: 2px solid;
+		border-color: #8c5858;
+	}
+
+}
+
+@media (max-width: 425px){
+	.newsabout{
+		grid-area: body;
+		margin-top: 4%;
+		display: grid;
+		grid-template-columns:1fr;
+		grid-template-rows:auto 5% auto;
+		grid-template-areas: 
+		"lastnews" 
+		"buffc"
+		"about";
+		/*background-color: gray;*/
+		margin-bottom: 8vw;
+	}
+	.lastnews{
+		grid-area: lastnews;
+		display: grid;
+		grid-template-rows:1fr;
+		grid-template-columns:15% 70% 15%;
+		grid-template-areas: 
+		"bfl slider bfr";
+		background: url(../images/slider.png) 49% 50% no-repeat fixed;
+	    background-size: 0%;
+	}
+
+	.schema_folus{
+		font-size: 4vw;
+	}
+	.schema_project{
+		font-size: 3.5vw;
+		padding-top: 1vw;
+	}
+
+	.familiar_box{
+		grid-area: body;
+		margin-top: 3%;
+		display: grid;
+		grid-template-columns:1fr;
+		grid-template-rows:auto 5% auto;
+		grid-template-areas: 
+		"left" 
+		"buffc" 
+		"right";
+	}
+	.blockvideo{
+		grid-area: left;
+		width: 90%;
+		/*background-color: gray;*/
+		margin: 0 5%;
+	}
+	.schema{
+		grid-area: right;
+		margin-bottom: 5vw;
+	}
+	.undrln_small{
+	 	height: 0.5vw;
+	 	width: calc(100% / 2.2);
+	}
+	.undrln_big{
+	 	height: 0.5vw;
+	 	width: calc(100% / 1.1);
+	}
+	.schema_pic{
+		margin: 0.7vw 0 0 0;
+		max-width: 100%;
+	}
+	.devtext_cre{
+		max-width: 80%;
+	}
+	.devtext_irr_ungrline_pic{
+	 	height: 0.5vw;
+	 	width: calc(100% / 2.2);
+	}
+	.devtext_cre_ungrline_pic{
+	 	height: 0.5vw;
+	 	width: calc(100% / 1.1);
+	}
+	.devtext{
+		margin-bottom: 1vw;
+	}
+	.devbox{
+		grid-area: devs;
+		margin-top: 3%;
+		display: grid;
+		grid-template-rows:auto;
+		grid-template-columns:10% 1fr 10%;
+		grid-template-areas: 
+		"bfl slider bfr";
+	}
+}
+
+@media (max-width: 1300px){
+/*	.schema_folus{
 		font-size: 25px;
 	}
 	.schema_project{
@@ -412,20 +557,20 @@ html,body{
 	}
 	.about_buff{
     	margin: 15% 0;
-	}
+	}*/
 }
 @media (max-width: 1100px){
-	.schema_folus{
+/*	.schema_folus{
 		font-size: 20px;
 	}
 	.schema_project{
 		font-size: 15px;
-	}
+	}*/
 }
 
 @media (max-width: 920px){
 
-	.newsabout{
+/*	.newsabout{
 		grid-template-columns:2% 0.65fr 1fr 2%;
 	}
 	.lastnews{
@@ -445,10 +590,10 @@ html,body{
 	}
 	.about_buff{
     	margin: 18% 0;
-	}
+	}*/
 }
 @media (max-width: 600px){
-	.about_ungrline{
+/*	.about_ungrline{
 		padding: 0 0;
 	}
 	.schema_folus{
@@ -466,10 +611,10 @@ html,body{
 	.video{
 		border: 4px solid;
 		border-color: #8c5858;
-	}
+	}*/
 }
 @media (max-width: 440px){
-	.lastnews{
+/*	.lastnews{
 		background: url(../images/slider.png) 52% 50% no-repeat fixed;
     	background-size: 107%;
     	background-attachment: scroll;
@@ -485,10 +630,10 @@ html,body{
 	}
 	.dev_slider .slick-slide{
 		padding: 0 5px;
-	}
+	}*/
 }
 @media (max-width: 355px){
-	.lastnews{
+/*	.lastnews{
 		background: url(../images/slider.png) 52% 50% no-repeat fixed;
     	background-size: 107%;
     	background-attachment: scroll;
@@ -504,5 +649,5 @@ html,body{
 	}
 	.dev_slider .slick-slide{
 		padding: 0 5px;
-	}
+	}*/
 }

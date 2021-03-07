@@ -10,6 +10,14 @@ $(document).ready(function(){
                 lazyLoad: 'progressive',
                 prevArrow: "<img src='svg/up.svg' class='prev' alt='1'>",
     			nextArrow: "<img src='svg/down.svg' class='next' alt='2'>",
+                responsive: [
+                  {
+                    breakpoint: 425,
+                    settings: {
+                      slidesToShow: 2,
+                    }
+                  }
+                ],
     });
     $('.dev_slider').slick({
                 slidesToShow: 3,
@@ -20,6 +28,14 @@ $(document).ready(function(){
                 lazyLoad: 'progressive',
                 prevArrow: "<img src='svg/left.svg' class='prev' alt='1'>",
                 nextArrow: "<img src='svg/right.svg' class='next' alt='2'>",
+                responsive: [
+                  {
+                    breakpoint: 425,
+                    settings: {
+                      slidesToShow: 1,
+                    }
+                  }
+                ],
     });
 
     window.addEventListener('resize',function()

@@ -84,6 +84,7 @@ html,body{
 	text-align: center;
 	margin-top: 2%;
 }
+/* --------------------------------------------------AUTH */
 .auth{
 	grid-area: left;
 	background-color: #521e1e;
@@ -109,6 +110,7 @@ html,body{
 .auth_pic{
  	width: 40%;
 }
+/* --------------------------------------------------REG */
 .reg{
 	grid-area: right;
 	background-color: #521e1e;
@@ -264,6 +266,8 @@ html,body{
 	color: orange;
 	font-size: 1.0vw;
 }
+/*-----------------------------------------------ForgetPanel*/
+
 /*-----------------------------------------------RegPanel*/
 .reg_panel{
 	display: none;
@@ -687,7 +691,7 @@ html,body{
 	}
 	/*WARNINGS*/
 	.auth_login_warn{
-		width: 60%;
+		width: 70%;
 		margin-top:3%;
 		margin-left: 11vw;
 		display: flex;
@@ -978,7 +982,7 @@ html,body{
 	}
 	/*WARNINGS*/
 	.auth_login_warn{
-		width: 60%;
+		width: 70%;
 		margin-top:3%;
 		margin-left: 12.5vw;
 		display: flex;
@@ -1278,7 +1282,7 @@ html,body{
 	}
 	/*WARNINGS*/
 	.auth_login_warn{
-		width: 60%;
+		width: 70%;
 		margin-top:3%;
 		margin-left: 14.5vw;
 		display: flex;

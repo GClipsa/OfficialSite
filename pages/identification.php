@@ -110,10 +110,10 @@
 								<input type="password" id="Auth_password_text" placeholder="Your password...">
 							</div>
 							<div class="auth_submit">
-								<div class="auth_submit_btn" id="Auth_submit_btn"> <p>SING IN</p> </div>
+								<div class="auth_submit_btn" id="Auth_submit_btn"> <p id="Auth_submit_btn_p">SING IN</p> </div>
 							</div>
 							<div class="auth_forget">
-								<div class="forget_pass"> <p>FORGET PASSWORD</p> </div>
+								<div class="forget_pass" id="Forget_pass"> <p>FORGET PASSWORD</p> </div>
 							</div>
 						</div>
 						<div class="reg_panel" id="Reg_panel">
@@ -142,7 +142,21 @@
 								<input type="password" id="Reg_repassword_text" placeholder="Repeat your password...">
 							</div>
 							<div class="reg_submit">
-								<div class="reg_submit_btn" id="Reg_submit_btn"> <p>SING UP</p> </div>
+								<div class="reg_submit_btn" id="Reg_submit_btn"> <p id="Reg_submit_btn_p">SING UP</p> </div>
+							</div>
+						</div>
+						<div class="forget_panel auth_panel" id="Forget_panel">
+							<div class="forget_text auth_text">
+								<img class="forget_text_pic auth_text_pic" id="Forget_text_pic" src="../svg/back.svg" alt="back.svg">
+								<p>FORGET PASSWORD FORM</p>
+							</div>
+							<div class="forget_email_warn auth_login_warn"><p id="flw">Some forget warning for people.</p></div>
+							<div class="forget_email auth_login">
+								<img class="forget_email_pic auth_login_pic" src="../svg/email.svg" alt="email.svg">
+								<input type="text" id="Forget_email_text" placeholder="Your email...">
+							</div>
+							<div class="forget_submit auth_submit">
+								<div class="forget_submit_btn auth_submit_btn" id="Forget_submit_btn"> <p>SEND PASSWORD</p> </div>
 							</div>
 						</div>
 					</div>

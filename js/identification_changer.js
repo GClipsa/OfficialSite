@@ -13,6 +13,27 @@ $(document).ready(function(){
 		added_item.style.display = 'block';
 	}
 
+	$("#Forget_pass").on("click", function()
+    {
+    	showforgetpanel();
+    });
+
+	function showforgetpanel() {
+		var added_item = document.getElementById('Panel_choose');
+		added_item.style.display = 'none';
+
+		var added_item = document.getElementById('Auth_panel');
+		added_item.style.display = 'none';
+
+		var added_item = document.getElementById('Forget_panel');
+		added_item.style.display = 'block';
+	}
+
+	$("#Forget_text_pic").on("click", function()
+    {
+    	showchoose();
+    });
+
 	$("#Reg").on("click", function()
     {
     	showregpanel();
@@ -35,6 +56,8 @@ $(document).ready(function(){
 		var added_item = document.getElementById('Auth_panel');
 		added_item.style.display = 'none';
 		var added_item = document.getElementById('Reg_panel');
+		added_item.style.display = 'none';
+		var added_item = document.getElementById('Forget_panel');
 		added_item.style.display = 'none';
 
 		var added_item = document.getElementById('Panel_choose');

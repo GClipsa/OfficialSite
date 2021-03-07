@@ -19,6 +19,9 @@ $(document).ready(function(){
 		{
 			warning_message_clear();
 			authorization(login, password);
+			document.getElementById('Auth_submit_btn_p').innerHTML = "Wait some seconds...";
+			var container = document.getElementById('Auth_submit_btn');
+			container.style.pointerEvents = 'none';
 		}
     });
 
@@ -48,8 +51,11 @@ $(document).ready(function(){
         }else if(data == "phpOK"){
             document.getElementById('Auth_login_text').value = "";
             document.getElementById('Auth_password_text').value = "";
+			document.getElementById('Auth_submit_btn_p').innerHTML = "SIGN IN";
+			var container = document.getElementById('Auth_submit_btn');
+			container.style.pointerEvents = 'auto';
             location.href = "/";
-        }else{alert(data);}
+        }
     }
 
     function func_complete_auth(){
@@ -61,6 +67,20 @@ $(document).ready(function(){
 	    var pattern  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	    return pattern .test(String(email).toLowerCase());
 	}
+
+	$("#Forget_submit_btn").on("click", function()
+    {
+		var email = (document.getElementById('Forget_email_text').value).toLowerCase();
+		var error = "";
+		if(email == "" || !validateEmail(email) || email.length > 75){
+			error = "2";
+			warning_message("#flw", "Your email must be real and in length smaller than 75 symbols.");
+		}
+		if(error == "")
+		{
+			warning_message_clear();
+		}
+	});
 
 	$("#Reg_submit_btn").on("click", function()
     {
@@ -89,6 +109,9 @@ $(document).ready(function(){
 		{
 			warning_message_clear();
 			registration(login, email, password, repassword);
+			document.getElementById('Reg_submit_btn_p').innerHTML = "Wait some seconds...";
+			var container = document.getElementById('Reg_submit_btn');
+			container.style.pointerEvents = 'none';
 		}
     });
 
@@ -134,6 +157,9 @@ $(document).ready(function(){
             document.getElementById('Reg_repassword_text').value = "";
         	create_modal_window("Congratulations, you have successfully registered! An email has been sent to the email address you provided with a link to verify this email address in your account.", "/");
         }
+		document.getElementById('Reg_submit_btn_p').innerHTML = "SIGN UP";
+		var container = document.getElementById('Reg_submit_btn');
+		container.style.pointerEvents = 'auto';
     }
 
     function func_complete_reg(){
@@ -148,7 +174,7 @@ $(document).ready(function(){
     }
     function warning_message_clear()
     {
-		var massid = ["#alw","#apw","#rlw","#rew","#rpw","#rrw"];
+		var massid = ["#alw","#apw","#rlw","#rew","#rpw","#rrw","#flw"];
 		massid.forEach(function(id)
 		{	
 			var $elem = document.querySelector(id);
