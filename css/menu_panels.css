@@ -25,9 +25,7 @@ html,body{
 @font-face {
     font-family: 'Bebas Neue Pro';
     src: local('Bebas Neue Pro Bold'), local('Bebas-Neue-Pro-Bold'),
-        url('../fonts/BebasNeuePro-Bold.woff2') format('woff2'),
-        url('../fonts/BebasNeuePro-Bold.woff') format('woff'),
-        url('../fonts/BebasNeuePro-Bold.ttf') format('truetype');
+        url('../fonts/BebasNeuePro-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
  }
