@@ -156,7 +156,7 @@
 								<input type="text" id="Forget_email_text" placeholder="Your email...">
 							</div>
 							<div class="forget_submit auth_submit">
-								<div class="forget_submit_btn auth_submit_btn" id="Forget_submit_btn"> <p id="Forget_submit_btn_p">SEND PASSWORD</p> </div>
+								<div class="forget_submit_btn auth_submit_btn" id="Forget_submit_btn"> <p id="Forget_submit_btn_p">SEND INSTRUCTIONS</p> </div>
 							</div>
 						</div>
 					</div>

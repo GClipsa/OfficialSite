@@ -22,7 +22,7 @@ $(document).ready(function(){
 		var repassword = (document.getElementById('Reset_repass_text').value);
 
 		var error = "";
-		if(code.length != 10)
+		if(code.length != 15)
 		{
 			error = "1";
 			warning_message("#rcw", "Incorrect code.");

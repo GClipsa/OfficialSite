@@ -43,7 +43,7 @@ if(isset($_POST['email']))
 		$rpass = substr(md5(time()), 0, 10);
 		$rpass = base64_encode($rpass.date(',Y-m-d H:i:s',$t));
 
-		$rcode = substr(md5(time()), 0, 10);
+		$rcode = substr(md5($user->login.time()), 0, 15);
 
 		$user = R::load( 'users', $user->id);
 		$user->resetpass = $rpass;
