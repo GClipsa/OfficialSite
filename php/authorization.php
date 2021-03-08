@@ -3,7 +3,7 @@ require 'conndis_mysql.php';
 
 if(isset($_POST['login']) && isset($_POST['password']))
 {
-	$login = $_POST["login"];
+	$login = strtolower($_POST["login"]);
 	$password = $_POST["password"];
 
 	$user = R::findOne('users', 'login = ?', array($login));

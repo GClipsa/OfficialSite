@@ -1,0 +1,317 @@
+/* Убираем внешние отступы */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li,a, img{
+	padding: 0;
+ 	margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+html,body{
+	height: 100%;
+}
+*,*:before,*:after{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+//--------------------------------------------------
+.main_body{
+	display: grid;
+	margin: 10px 0;
+	grid-template-columns:1fr;
+	grid-template-rows: minmax(100px, max-content);
+	grid-template-areas: 
+	"container1";
+}
+.container1{
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: 
+	"head"
+	"body"
+	"foot";
+}
+
+.welcome_box{
+	grid-area: head;
+	text-align: center;
+	height: 7.5vw;
+
+	background: url(../svg/title_index_1.svg) 50% 50% no-repeat fixed;
+    background-size: 100%;
+    background-attachment: scroll;
+
+	.welcome_text{
+		font-size: 3.85vw;
+		margin-top: 1.45vw;
+		color: white;
+		background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+		-webkit-background-clip: text;
+		  -webkit-text-fill-color: transparent;
+		/*background-color: lightgray;*/
+	}
+}
+
+.familiar_box{
+	grid-area: body;
+	margin-top: 1%;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns:5% 1fr 5%;
+	grid-template-areas: 
+	"buffl center buffr";
+
+	.familiar_box_items{
+		grid-area: center;
+		display: grid;
+		grid-template-columns:20% 60% 20%;
+		grid-template-areas:
+		"left center right";
+		/*background-color: darkgray;*/
+
+		@media (max-width: 1200px){
+			grid-template-columns:15% 70% 15%;
+			grid-template-areas:
+			"left center right";
+		}
+		@media (max-width: 768px){
+			grid-template-columns:10% 80% 10%;
+			grid-template-areas:
+			"left center right";
+		}
+		@media (max-width: 425px){
+			grid-template-columns:5% 90% 5%;
+			grid-template-areas:
+			"left center right";
+		}
+
+		.reset_panel
+		{
+			grid-area: center;
+			background-color: #521e1e;
+			border: 4px solid #8c5858;
+			text-align: center;
+
+			@media (max-width: 1200px){
+				border: 3px solid #8c5858;
+			}
+			@media (max-width: 768px){
+				border: 2px solid #8c5858;
+			}
+			@media (max-width: 425px){
+				border: 1px solid #8c5858;
+			}
+			
+			$rt0 : 2.3vw;
+			$rt1 : 4vw;
+			$rt2 : 5vw;
+			$rt3 : 6vw;
+			.reset_text
+			{
+				display: grid;
+				grid-template-columns:5% 90% 5%;
+				grid-template-areas: 
+				"buffl text buffr";
+				& p{
+					color: #fff;
+					font-size: $rt0;
+					grid-area: text;
+				}
+				@media (max-width: 1200px){
+					& p{
+						font-size: $rt1;
+					}
+				}
+				@media (max-width: 768px){
+					& p{
+						font-size: $rt2;
+					}
+				}
+				@media (max-width: 425px){
+					& p{
+						font-size: $rt3;
+					}
+				}
+			}
+
+			//-------------------------
+			%res_warn{
+				$fz0:1vw;$fz1:2vw;$fz2:3vw;$fz3:4vw;
+
+				width: 60%;
+				margin-top:3%;
+				margin-left: 11.8vw;
+				display: flex;
+				text-align: left;
+				& p{
+					display: none;
+					padding-left: 5px;
+					font-size: $fz0;
+					color: orange;
+				}
+				
+				@media (max-width: 1200px){
+					margin-left: 12.2vw;
+					& p{
+						font-size: $fz1;
+					}
+				}
+				@media (max-width: 768px){
+					margin-left: 12.3vw;
+					& p{
+						font-size: $fz2;
+					}
+				}
+				@media (max-width: 425px){
+					& p{
+						font-size: $fz3;
+					}
+				}
+			}
+			%_input{
+				$fi0:1.6vw;
+				$fi1:2.3vw;
+				$fi2:3.4vw;
+				$fi3:4.5vw;
+
+				font-size: $fi0;
+				background-color: #521e1e;
+				border: 2px solid #8c5858;
+				width: 60%;
+				font-family: "Oswald";
+				color: #fff;
+				padding-left: 5px;
+
+				@media (max-width: 1200px){
+					width: 65%;
+					font-size: $fi1;
+					border: 1px solid #8c5858;
+				}
+				@media (max-width: 768px){
+					width: 70%;
+					font-size: $fi2;
+					border: 1px solid #8c5858;
+				}
+				@media (max-width: 425px){
+					width: 75%;
+					font-size: $fi3;
+					border: 1px solid #8c5858;
+				}
+			}
+			%res_block{
+				display: flex;
+				/*background-color: gray;*/
+				justify-content: center;
+			}
+			%res_block_pic{
+				$fp0:2.3vw;
+				$fp1:3vw;
+				$fp2:4vw;
+				$fp3:5vw;
+				
+
+				width: $fp0;
+				margin-right: 5px;
+				@media (max-width: 1200px){
+					width: $fp1;
+				}
+				@media (max-width: 768px){
+					width: $fp2;
+				}
+				@media (max-width: 425px){
+					width: $fp3;
+				}
+			}
+//----------------------------------------------------code
+			.reset_code_warn{
+				@extend %res_warn;
+			}
+			& input{
+				@extend %_input;
+			}
+			.reset_code{
+				@extend %res_block;
+			}	
+			.reset_code_pic{
+				@extend %res_block_pic;
+			}
+//----------------------------------------------------pass
+			.reset_pass_warn{
+				@extend %res_warn;
+			}
+			& input{
+				@extend %_input;
+			}
+			.reset_pass{
+				@extend %res_block;
+			}	
+			.reset_pass_pic{
+				@extend %res_block_pic;
+			}
+//----------------------------------------------------repass
+			.reset_repass_warn{
+				@extend %res_warn;
+			}
+			& input{
+				@extend %_input;
+			}
+			.reset_repass{
+				@extend %res_block;
+			}	
+			.reset_repass_pic{
+				@extend %res_block_pic;
+			}
+//----------------------------------------------------submit
+			.reset_submit{
+				display: flex;
+				justify-content: center;
+			}
+			.reset_submit_btn{
+				$rs0 : 2.3vw;
+				$rs1 : 3vw;
+				$rs2 : 4vw;
+				$rs3 : 5vw;
+
+				font-size: $rs0;
+				background-color: #6b2828;
+				border: 2px solid #8c5858;
+				color: #fff;
+				margin-top: 3%;
+				margin-bottom: 1%;
+				width: 40%;
+				transition-property: background-color;
+				transition-duration: 0.2s;
+				font-family: "Bebas Neue";
+				padding-left: 0px;
+
+				@media (max-width: 1200px){
+					font-size: $rs1;
+					border: 1px solid #8c5858;
+					width: 50%;
+				}
+				@media (max-width: 768px){
+					font-size: $rs2;
+					width: 55%;
+					margin-top: 4%;
+					margin-bottom: 2%;
+				}
+				@media (max-width: 425px){
+					font-size: $rs3;
+					width: 60%;
+					margin-top: 5%;
+					margin-bottom: 3%;
+				}
+			}
+			.reset_submit_btn:hover{
+				background-color: #7b2828;
+				transition-property: background-color;
+				transition-duration: 0.2s;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+

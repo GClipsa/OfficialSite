@@ -10,7 +10,7 @@
 <HEAD> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="../images/gclipsa.ico" type="image/x-icon">
+<link rel="icon" href="https://gclipsa.com/images/favicon.ico" type="image/x-icon">
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/menu_panels.css">
 <link rel="stylesheet" type="text/css" href="../css/identification_mainbody.css">
@@ -156,7 +156,7 @@
 								<input type="text" id="Forget_email_text" placeholder="Your email...">
 							</div>
 							<div class="forget_submit auth_submit">
-								<div class="forget_submit_btn auth_submit_btn" id="Forget_submit_btn"> <p>SEND PASSWORD</p> </div>
+								<div class="forget_submit_btn auth_submit_btn" id="Forget_submit_btn"> <p id="Forget_submit_btn_p">SEND PASSWORD</p> </div>
 							</div>
 						</div>
 					</div>

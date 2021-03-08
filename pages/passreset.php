@@ -1,8 +1,23 @@
 <?php
-	include "../php/getsoftwarecontent_mysql.php";
-	require '../php/cookieverify.php';
-
-	$come = getsoftwarecontent();
+require '../php/conndis_mysql.php';
+require	'../php/geturlquery.php';
+require '../php/cookieverify.php';
+$resetpass = getUrlQuery("token");
+$resetcode = getUrlQuery("code");
+// var_dump($resetpass);
+$user = R::findOne('users', 'resetpass = ?', array($resetpass));
+if($user == null)
+{
+	header("Location: /");
+}
+else
+{
+	$parts=explode(",",base64_decode($resetpass));
+	if(strtotime($parts[1]) < strtotime(date('Y-m-d H:i:s')))
+    {
+        header("Location: /");
+    }
+}
 ?>
 <!doctype html>
 <HTML> 
@@ -12,10 +27,10 @@
 <link rel="icon" href="https://gclipsa.com/images/favicon.ico" type="image/x-icon">
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/menu_panels.css">
-<link rel="stylesheet" type="text/css" href="../css/software_content_mainbody.css">
-<link rel="stylesheet" type="text/css" href="../css/magnific-popup.css">
+<link rel="stylesheet" type="text/css" href="../css/passreset_mainbody.css">
+<link rel="stylesheet" type="text/css" href="../css/modalwin.css">
 
-<TITLE>GClipsa Software: <?php echo $come['name']?></TITLE> 
+<TITLE>GClipsa reseting password</TITLE> 
 </HEAD> 
 <BODY> 
 	<div class="bg"></div>
@@ -74,53 +89,43 @@
 		<div class="main_body">
 			<div class="container1">
 				<div class="welcome_box">
-					<h1 class="welcome_text"><?php echo $come['name']?></h1>
+					<h1 class="welcome_text">Reseting Password</h1>
 				</div>
 				<div class="familiar_box">
 					<div class="familiar_box_items">
-						<div class="video_box">
-							<div class="videopic">
-								<div class="video_buffer">
-									<iframe class="video_buffer_item"
-											src="https://www.youtube.com/embed/<?php echo $come['video']?>"
-							    			frameborder="0"
-							    			allow="accelerometer; autoplay; fullscreen; encrypted-media; gyroscope; picture-in-picture"
-							    			allowfullscreen>
-									</iframe>
-								</div>
+						<div class="reset_panel">
+							<div class="reset_text">
+								<p>PASSWORD RESET FORM</p>
 							</div>
-							<div class="devbox">
-								<div class="dev_slider">
-									<?php 	
-										$pictures =  explode(",",$come['pictures']);
-										foreach ($pictures as $img) 
-										{
-									?>
-									<div class="dev_slider_item">
-										<a class="popup" href="<?php echo $img ?>"><img src="<?php echo $img ?>" alt="p1.jpg"></a>
-									</div>
-									<?php  	
-										} 
-									?>
-								</div>	
-							</div>								
-						</div>
-						<div class="info_box">
-							<div class="info_box_header">
-								<h2 class="info_box_header_p"><?php echo $come['header']?></h2>
-								<img class="undrln_small" src="../svg/underline.svg" alt="underline.svg">
+                            <div class="reset_code_warn"><p id="rcw">Some code warning for people.</p></div>
+							<div class="reset_code">
+								<img class="reset_code_pic" src="../svg/key.svg" alt="key.svg">
+								<?php
+								if($resetcode){
+								?>
+								<input type="text" id="Reset_code_text" placeholder="Your code from mail..." value="<?php echo $resetcode ?>">
+								<?php
+								}
+								else
+								{
+								?>
+								<input type="text" id="Reset_code_text" placeholder="Your code from mail..." value="">
+								<?php
+								}
+								?>
 							</div>
-							<div class="text_info">
-								<p class="text_info_p"><?php echo $come['data']?></p>
+							<div class="reset_pass_warn"><p id="rpw">Some password warning for people.</p></div>
+							<div class="reset_pass">
+								<img class="reset_pass_pic" src="../svg/password.svg" alt="password.svg">
+								<input type="password" id="Reset_pass_text" placeholder="Your new password...">
 							</div>
-							<div class="undrln_pic">
-								<img class="undrln_big" src="../svg/underline.svg" alt="underline.svg">
+							<div class="reset_repass_warn"><p id="rrw">Some password warning for people.</p></div>
+							<div class="reset_repass">
+								<img class="reset_repass_pic" src="../svg/password.svg" alt="password.svg">
+								<input type="password" id="Reset_repass_text" placeholder="Repeat new password...">
 							</div>
-							<div class="downbuy">
-								<div class="downbuy_pic">
-									<img class="downbuy_pic_img" src="../svg/<?php echo $come['gettype']?>.svg" alt="<?php echo $come['gettype']?>.svg">
-								</div>
-								<p class="downbuy_text_p"><?php echo $come['gettype']?></p>
+							<div class="reset_submit">
+								<div class="reset_submit_btn" id="Reset_submit_btn"> <p id="Reset_submit_btn_p">CHANGE PASSWORD</p> </div>
 							</div>
 						</div>
 					</div>
@@ -138,8 +143,6 @@
 <!-- JS -->
 <script src="../js/jquery.js"></script>
 <script src="../js/burgmenu.js"></script>
-<script src="../js/slick.min.js"></script>
-<script src="../js/soft_content_slider.js"></script>
-<script src="../js/magnific-popup.min.js"></script>
-<script src="../js/popup_image.js"></script>
+<script type="module" src="../js/passreset_checker.js"></script>
+<script type="module" src="../js/modalwin.js"></script>
 </HTML>

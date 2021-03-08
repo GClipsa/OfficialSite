@@ -11,8 +11,8 @@ require 'phpmail/src/SMTP.php';
 
 if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['repassword']))
 {
-	$login = $_POST["login"];
-	$email = $_POST["email"];
+	$login = strtolower($_POST["login"]);
+	$email = strtolower($_POST["email"]);
 	$password = $_POST["password"];
 	$repassword = $_POST["repassword"];
 
@@ -57,8 +57,16 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 		$user->status = 'user';
 		$user->date = $date;
 		R::store($user);
-		$mailmess = "Welcome to GClipsa, we are creating best software for you!<br>Please confirm this email on our site (gclipsa.com), follow the long link below for successful registration.<br><br>https://gclipsa.com/pages/activation.php?token=".$tok."<br><br>This link will be available within 24 hours.";
 
+			$mailmess = "Welcome to GClipsa, we are creating best software for you!<br>Please confirm this email on our site (gclipsa.com), click on the button below for successful registration.<br><br>
+			<div><!--[if mso]>
+	  <v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='http://' style='height:36px;v-text-anchor:middle;width:200px;' arcsize='50%' strokecolor='#e6e6e8' fillcolor='#ff9b8f'>
+		<w:anchorlock/>
+		<center style='color:#2f353e;font-family:sans-serif;font-size:13px;font-weight:bold;'>Reset password</center>
+	  </v:roundrect>
+	<![endif]--><a href='https://gclipsa.com/pages/activation?token=".$tok."'
+	style='background-color:#ff9b8f;border:1px solid #e6e6e8;border-radius:18px;color:#2f353e;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:36px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;'>Reset password</a></div>
+			<br><br>This link will be available within 24 hours.";
 		
 		$mail = new PHPMailer();
 		$mail->isSMTP();                                      // Set mailer to use SMTP

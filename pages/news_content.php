@@ -12,7 +12,7 @@
 <HEAD> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="../images/gclipsa.ico" type="image/x-icon">
+<link rel="icon" href="https://gclipsa.com/images/favicon.ico" type="image/x-icon">
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/menu_panels.css">
 <link rel="stylesheet" type="text/css" href="../css/news_content_mainbody.css">
