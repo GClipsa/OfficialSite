@@ -52,6 +52,24 @@ html,body{
 		  -webkit-text-fill-color: transparent;
 		/*background-color: lightgray;*/
 	}
+	@media (max-width: 425px){
+		grid-area: head;
+		text-align: center;
+		height: 13.5vw;
+		
+		background: url(../svg/title_index_1_small.svg) 50% 50% no-repeat fixed;
+		background-size: 90%;
+		background-attachment: scroll;
+		.welcome_text{
+			font-size: 7vw;
+			margin-top: 2.7vw;
+			color: white;
+			background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
+			-webkit-background-clip: text;
+			  -webkit-text-fill-color: transparent;
+			/*background-color: lightgray;*/
+		}
+	}
 }
 
 .familiar_box{
