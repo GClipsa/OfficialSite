@@ -21,7 +21,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/menu_panels.css">
 <link rel="stylesheet" type="text/css" href="../css/mycabinet_mainbody.css">
-
+<link rel="stylesheet" type="text/css" href="../css/tooltip.css">
 <TITLE>GClipsa Cabinet</TITLE> 
 </HEAD> 
 <BODY> 
@@ -177,6 +177,7 @@
 									</div>
 								</div>
 								<div class="rmb_list">
+								<div id="tooltip"></div>
 									<ul class="list_ul" id="List_ul">
 										<li class="list_li_box">
 											<div class="pj_name"> <p>Name of product</p> </div>
@@ -191,10 +192,10 @@
 											foreach ($userorders as $come) 
 											{
 										?>
-										<li class="list_li_box">
+										<li class="list_li_box list_li_box_nothead">
 											<div class="pj_name"> <p><?php echo $come->name ?></p> </div>
 											<div class="pj_code"> <p><?php echo $come->productcode ?></p> </div>
-											<div class="ser_num"> <p><?php echo $come->sernum ?></p> </div>
+											<div class="ser_num" data-tooltip="Copied!"> <p> <?php echo $come->sernum ?></p> </div>
 											<div class="date"> <p><?php echo $come->datebuy ?></p> </div>
 											<div class="date"> <p><?php echo $come->datestart ?></p> </div>
 											<div class="date"> <p><?php echo $come->datefinish ?></p> </div>
@@ -217,12 +218,13 @@
 			<p></p>
 		</div>
 		<div class="footer">
-			<p> &copy; GClipsa / DOKERcom / 2021 </p>
+			<p> &copy; GCLIPSA / 2021 </p>
 		</div>
 	</div>
 </BODY>
 <!-- JS -->
 <script src="../js/jquery.js"></script>
 <script src="../js/burgmenu.js"></script>
-<script src="../js/mycabinet.js"></script>
+<script src="../js/mycabinet.js"></script>\
+<script src="../js/tooltip.js"></script>
 </HTML>

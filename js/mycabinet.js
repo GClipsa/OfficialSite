@@ -31,4 +31,17 @@ $(document).ready(function(){
     	document.location.replace("/pages/identification.php");
     });
 
+	$(".ser_num").on("click", function(event)
+    {
+    	copykey(event.target);
+    });
+
+	function copykey(el) {
+		var $tmp = $("<textarea>");
+		$("body").append($tmp);
+		$tmp.val($(el).text()).select();
+		document.execCommand("copy");
+		$tmp.remove();
+	}
+
 });

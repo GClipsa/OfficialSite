@@ -402,6 +402,14 @@ html,body{
 .list_ul :first-child{
 	background-color:  #421e1e;
 }
+.list_li_box_nothead .ser_num:hover{
+	cursor: pointer;
+}
+.list_li_box_nothead .ser_num:hover p{
+	transition-property: color;
+	transition-duration: 0.2s;
+	color:  #8c5858;
+}
 .list_li_box{
 	border: 1px solid #8c5858;
   	margin-top: 0px;
@@ -417,6 +425,8 @@ html,body{
 .list_li_box p{
 	font-size: 1.3vw;
   	color: white;
+	transition-property: color;
+	transition-duration: 0.2s;
 }
 
 
@@ -484,14 +494,60 @@ html,body{
 		margin-bottom: 1%;
 
 	}
-
+	.rmb_list{
+		width: 100%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		border: 1px solid;
+		border-color: #8c5858;
+		display: grid;
+		grid-template-columns:100%;
+	}
+/* !--------------------------------------------------------------------------------------creating */
+	.list_ul :first-child{
+		border: 1px solid #8c5858;
+		margin-top: 0px;
+		padding: 0.5vw;
+		width: 95%;
+		margin-left:2.5%;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin-top: 1%;
+		margin-bottom: 1%;
+	}
+	.list_ul :not(:first-child){
+		border: 1px solid #8c5858;
+		margin-top: 0px;
+		padding: 0.5vw;
+		width: 95%;
+		margin-left:2.5%;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin-top: 3%;
+		margin-bottom: 1%;
+	}
+	.list_li_box_nothead .pj_name{
+		border: 1px solid #8c5858;
+		margin-top: 0px;
+		padding: 0.5vw;
+		width: 95%;
+		margin-left:2.5%;
+		text-decoration: none;
+		display: flex;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		background-color:  #621e1e;
+	}
 	.list_ul{
-		max-height: 40vw;
-		
+		max-height: 87vw;
 		/*min-height: 13.10vw;*/
 	}
 	.list_li_box p{
-		font-size: 1.8vw;
+		font-size: 4vw;
 	  	color: white;
 	}
 	.l_username{
@@ -501,8 +557,8 @@ html,body{
 	}
 	.l_username p{
 		color: white;
-		font-size: 4vw;
-		padding-top: 0.5%;
+		font-size: 5vw;
+		padding-top: 1%;
 	}
 
 	.l_balance_group{
@@ -548,20 +604,20 @@ html,body{
 
 	.rmb_total p{
 		color: white;
-		font-size: 3vw;
+		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
 	}
 
 	.rmb_name p{
 		color: white;
-		font-size: 3.5vw;
+		font-size: 4.5vw;
 
 		/*padding: 1% 0 0.5% 0;*/
 	}
 	
 	.rmb_total1 p{
 		color: white;
-		font-size: 3vw;
+		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
 	}
 	/*------------------profile*/
