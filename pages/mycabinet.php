@@ -225,6 +225,6 @@
 <!-- JS -->
 <script src="../js/jquery.js"></script>
 <script src="../js/burgmenu.js"></script>
-<script src="../js/mycabinet.js"></script>\
+<script src="../js/mycabinet.js"></script>
 <script src="../js/tooltip.js"></script>
 </HTML>
