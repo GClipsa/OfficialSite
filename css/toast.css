@@ -1,0 +1,80 @@
+.toast {
+    max-width: 350px;
+    overflow: hidden;
+    font-size: 1vw;
+    background-color: rgba(255, 255, 255, 1);
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    position: relative;
+    padding: 0.75rem 2rem 0.75rem 0.75rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    color:white;
+  }
+  
+  .toast:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+  
+  .toast_show {
+    display: block;
+  }
+  
+  .toast__close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    float: right;
+    font-size: 1.5vw;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 rgb(0, 0, 0);
+    opacity: 1;
+    appearance: button;
+    margin: 0;
+    font-family: inherit;
+    border-radius: 0;
+  }
+  
+.toast input:not([type="checkbox"]) {
+    display: block;
+    font-size: 1vw;
+    margin-bottom: .5rem;
+  }
+
+  @media (max-width: 1200px){
+	.toast {
+        font-size: 1.5vw;
+        max-width: 250px;
+    }
+    .toast__close {
+        font-size: 2vw;
+    }
+}
+@media (max-width: 768px){
+	.toast {
+        font-size: 2vw;
+        max-width: 200px;
+    }
+    .toast__close {
+        font-size: 3.5vw;
+    }
+}
+@media (max-width: 425px){
+	.toast {
+        font-size: 3vw;
+        max-width: 175px;
+    }
+    .toast__close {
+        font-size: 5vw;
+    }
+}

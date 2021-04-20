@@ -200,7 +200,7 @@ html,body{
 	/*min-height: 20vw;*/
 }
 .r_profile_box{
-	display: none;
+	display: auto;
 	/*min-height: 20vw;*/
 }
 .rpb_name{
@@ -219,6 +219,7 @@ html,body{
 	margin-bottom: 1%;
 }
 .rpb_acc_status p{
+	text-transform: uppercase;
 	color: white;
 	font-size: 1.5vw;
 	padding: 1% 0 0.5% 0;
@@ -324,8 +325,161 @@ html,body{
 	background-color: #491212;
 	cursor: pointer;
 }
+/*---------------------------------------change password*/
+.r_profile_changepass_box{
+	display: none;
+	/*background-color: gray;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: auto, auto, auto;
+	grid-template-areas: 
+	"oldpass"
+	"newpass"
+	"renewpass";
+}
+.rpc_oldpass{
+	grid-area: oldpass;
+	display: flex;
+	/* background-color: gray; */
+	justify-content: center;
+	margin-bottom:1.5%;
+}
+.rpc_oldpass input{
+	font-size: 1.4vw;
+	background-color: #521e1e;
+	border: 2px solid #8c5858;
+	width: 60%;
+	font-family: "Oswald";
+	color: #fff;
+	padding-left: 5px;
+}
+.rpc_oldpass_warn{
+	grid-area: oldpass;
+	width: 60%;
+	margin-top:1%;
+	margin-left: 13.8vw;
+	display: flex;
+  	text-align: left;
+}
+.rpc_oldpass_warn p{
+	display: none;
+	padding-left: 5px;
+	color: orange;
+	font-size: 1.0vw;
+}
+
+.rpc_oldpass_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.rpc_submit{
+	display: flex;
+	justify-content: center;
+}
+.rpc_submit_btn{
+	font-size: 1.8vw;
+	background-color: #6b2828;
+	border: 2px solid #8c5858;
+	color: #fff;
+	margin-top: 2%;
+	margin-bottom: 1%;
+	width: 30%;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	font-family: "Bebas Neue";
+  	padding-left: 0px;
+	text-align: center;
+}
+.rpc_submit_btn:hover{
+	background-color: #7b2828;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+
+/*---------------------------------------change mail*/
+.r_profile_changeemail_box{
+	display: none;
+	/*background-color: gray;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: auto, auto, auto;
+	grid-template-areas: 
+	"pass"
+	"newemail"
+	"renewemail";
+}
+.rfc_pass{
+	grid-area: pass;
+	display: flex;
+	/* background-color: gray; */
+	justify-content: center;
+	margin-bottom:1.5%;
+}
+.rfc_pass input{
+	font-size: 1.4vw;
+	background-color: #521e1e;
+	border: 2px solid #8c5858;
+	width: 60%;
+	font-family: "Oswald";
+	color: #fff;
+	padding-left: 5px;
+}
+.rfc_pass_warn{
+	grid-area: oldpass;
+	width: 60%;
+	margin-top:1%;
+	margin-left: 13.8vw;
+	display: flex;
+  	text-align: left;
+}
+.rfc_pass_warn p{
+	display: none;
+	padding-left: 5px;
+	color: orange;
+	font-size: 1.0vw;
+}
+
+.rfc_pass_pic{
+	width: 2.3vw;
+	margin-right: 5px;
+}
+
+.rfc_submit{
+	display: flex;
+	justify-content: center;
+}
+.rfc_submit_btn{
+	font-size: 1.8vw;
+	background-color: #6b2828;
+	border: 2px solid #8c5858;
+	color: #fff;
+	margin-top: 2%;
+	margin-bottom: 1%;
+	width: 30%;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	font-family: "Bebas Neue";
+  	padding-left: 0px;
+	text-align: center;
+}
+.rfc_submit_btn:hover{
+	background-color: #7b2828;
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+  	cursor: pointer;
+}
+/*---------------------------------------change pass // mail*/
+.rpc_name{
+	text-align: center;
+}
+.rpc_name p{
+	color: white;
+	font-size: 2vw;
+	padding: 1.5% 0 1.5% 0;
+}
 /*---------------------------------------my puchases*/
 .r_my_purch_box{
+	display: none;
 	width: 96%;
 	margin-left: 2%;
 	margin-top: 1%;
@@ -402,8 +556,12 @@ html,body{
 .list_ul :first-child{
 	background-color:  #421e1e;
 }
+.list_li_box_nothead .ser_num{
+	text-transform: none;
+}
 .list_li_box_nothead .ser_num:hover{
 	cursor: pointer;
+	text-transform: none;
 }
 .list_li_box_nothead .ser_num:hover p{
 	transition-property: color;
@@ -487,6 +645,7 @@ html,body{
 	}
 
 	.r_my_purch_box{
+		display: none;
 		width: 96%;
 		margin-left: 2%;
 		margin-top: 1%;
@@ -503,7 +662,6 @@ html,body{
 		display: grid;
 		grid-template-columns:100%;
 	}
-/* !--------------------------------------------------------------------------------------creating */
 	.list_ul :first-child{
 		border: 1px solid #8c5858;
 		margin-top: 0px;
@@ -622,12 +780,12 @@ html,body{
 	}
 	/*------------------profile*/
 	.r_profile_box{
-		display: none;
+		display: auto;
 		min-height: 45vw;
 	}
 	.rpb_name p{
 		color: white;
-		font-size: 4vw;
+		font-size: 4.5vw;
 		padding: 1.5% 0 1.5% 0;
 	}
 	.rpb_acc_status{
@@ -684,27 +842,135 @@ html,body{
 	}
 	.rpb_confirmed p{
 		font-size: 3.3vw;
-		padding-top: 3%;
+		padding-top: 3.5%;
 		padding-left: 1%;
 	}
 
 	.rpb_change_email{
-		width: 60%;
-		margin: 2.5% 20%;
+		width: 80%;
+		margin: 2.5% 10%;
 	}
 	.rpb_change_email p{
-		font-size: 3.5vw;
-		padding: 1% 0 0.5% 0;
+		font-size: 4vw;
+		padding: 2% 0 2% 0;
 		padding-left: 1%;
 	}
 	.rpb_change_password{
-		width: 60%;
-		margin: 0 20%;
+		width: 80%;
+		margin: 0 10%;
 	}
 	.rpb_change_password p{
-		font-size: 3.5vw;
-		padding: 1% 0 0.5% 0;
+		font-size: 4vw;
+		padding: 2% 0 2% 0;
 		padding-left: 1%;
+	}
+
+	/*---------------------------------------change password*/
+	.rpc_oldpass input{
+		font-size: 3.5vw;
+		background-color: #521e1e;
+		border: 1px solid #8c5858;
+		width: 75%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+	.rpc_oldpass_warn{
+		grid-area: oldpass;
+		width: 75%;
+		margin-top:3%;
+		margin-left: 13.5vw;
+		display: flex;
+		text-align: left;
+	}
+	.rpc_oldpass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 2.5vw;
+	}
+
+	.rpc_oldpass_pic{
+		width: 4.5vw;
+		margin-right: 5px;
+	}
+
+	.rpc_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.rpc_submit_btn{
+		font-size: 3.8vw;
+		background-color: #6b2828;
+		border: 1px solid #8c5858;
+		color: #fff;
+		margin-top: 4%;
+		margin-bottom: 4%;
+		width: 40%;
+		transition-property: background-color;
+		transition-duration: 0.2s;
+		font-family: "Bebas Neue";
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	/*---------------------------------------change mail*/
+	.rfc_pass input{
+		font-size: 3.5vw;
+		background-color: #521e1e;
+		border: 1px solid #8c5858;
+		width: 75%;
+		font-family: "Oswald";
+		color: #fff;
+		padding-left: 5px;
+	}
+	.rfc_pass_warn{
+		grid-area: oldpass;
+		width: 75%;
+		margin-top:3%;
+		margin-left: 13.5vw;
+		display: flex;
+		text-align: left;
+	}
+	.rfc_pass_warn p{
+		display: none;
+		padding-left: 5px;
+		color: orange;
+		font-size: 2.5vw;
+	}
+
+	.rfc_pass_pic{
+		width: 4.5vw;
+		margin-right: 5px;
+	}
+
+	.rfc_submit{
+		display: flex;
+		justify-content: center;
+	}
+	.rfc_submit_btn{
+		font-size: 3.8vw;
+		background-color: #6b2828;
+		border: 1px solid #8c5858;
+		color: #fff;
+		margin-top: 4%;
+		margin-bottom: 4%;
+		width: 40%;
+		transition-property: background-color;
+		transition-duration: 0.2s;
+		font-family: "Bebas Neue";
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	/*---------------------------------------change pass // mail*/
+	.rpc_name{
+		text-align: center;
+	}
+	.rpc_name p{
+		color: white;
+		font-size: 4vw;
+		padding: 1.5% 0 1.5% 0;
 	}
 }
 
@@ -725,7 +991,7 @@ html,body{
 		color: white;
 		background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 		-webkit-background-clip: text;
-		  -webkit-text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
 		/*background-color: lightgray;*/
 	}
 }

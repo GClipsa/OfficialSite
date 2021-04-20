@@ -21,7 +21,9 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/menu_panels.css">
 <link rel="stylesheet" type="text/css" href="../css/mycabinet_mainbody.css">
+<link rel="stylesheet" type="text/css" href="../css/toast.css">
 <link rel="stylesheet" type="text/css" href="../css/tooltip.css">
+<link rel="stylesheet" type="text/css" href="../css/modalwin.css">
 <TITLE>GClipsa Cabinet</TITLE> 
 </HEAD> 
 <BODY> 
@@ -141,7 +143,7 @@
 										</div>
 									</div>
 									<?php if($userinfo->verified == 0) { ?>
-									<div class="rpb_confirm rpb_button">
+									<div class="rpb_confirm rpb_button"  id="Rpb_confirm">
 										<p>CONFIRM EMAIL</p>
 									</div>
 									<?php 
@@ -154,15 +156,65 @@
 									?>
 								</div>
 
-								<div class="rpb_change_email rpb_button">
+								<div class="rpb_change_email rpb_button" id="Rpb_change_email">
 									<p>CHANGE EMAIL</p>
 								</div>
 
-								<div class="rpb_change_password rpb_button">
+								<div class="rpb_change_password rpb_button" id="Rpb_change_password">
 									<p>CHANGE PASSWORD</p>
 								</div>
 							</div>
+							<!-- --------------- !CHANGE PASS ----------------- -->
+							<div class="r_profile_changepass_box" id="R_profile_changepass_box">
+								<div class="rpc_name">
+									<p>CHANGING PASSWORD</p>
+								</div>
+								<div class="rpc_oldpass_warn"><p id="row">Some old password warning for people.</p></div>
+								<div class="rpc_oldpass">
+									<img class="rpc_oldpass_pic" src="../svg/password.svg" alt="password.svg">
+									<input type="password" id="Rpc_oldpass_text" placeholder="Your old password...">
+								</div>
+								<div class="rpc_newpass_warn rpc_oldpass_warn"><p id="rnew">Some new password warning for people.</p></div>
+								<div class="rpc_newpass rpc_oldpass">
+									<img class="rpc_newpass_pic rpc_oldpass_pic" src="../svg/password.svg" alt="password.svg">
+									<input type="password" id="Rpc_newpass_text" placeholder="Your new password...">
+								</div>
+								<div class="rpc_newrepass_warn rpc_oldpass_warn"><p id="rrew">Some new repassword warning for people.</p></div>
+								<div class="rpc_newrepass rpc_oldpass">
+									<img class="rpc_newrepass_pic rpc_oldpass_pic" src="../svg/password.svg" alt="password.svg">
+									<input type="password" id="Rpc_newrepass_text" placeholder="Repeat your new password...">
+								</div>
+								<div class="rpc_submit">
+									<div class="rpc_submit_btn" id="Rpc_submit_btn"> <p id="Rpc_submit_btn_p">CHANGE PASSWORD</p> </div>
+								</div>
+							</div>
+							<!-- -------------------------------- -->
 
+							<!-- --------------- !CHANGE EMAIL ----------------- -->
+							<div class="r_profile_changeemail_box" id="R_profile_changeemail_box">
+								<div class="rfc_name rpc_name">
+									<p>CHANGING EMAIL</p>
+								</div>
+								<div class="rfc_pass_warn"><p id="rpw">Some password warning for people.</p></div>
+								<div class="rfc_pass">
+									<img class="rfc_pass_pic" src="../svg/password.svg" alt="password.svg">
+									<input type="password" id="Rfc_pass_text" placeholder="Your password...">
+								</div>
+								<div class="rfc_newemail_warn rfc_pass_warn"><p id="rnw">Some new email warning for people.</p></div>
+								<div class="rfc_newemail rfc_pass">
+									<img class="rfc_newemail_pic rfc_pass_pic" src="../svg/email.svg" alt="email.svg">
+									<input type="text" id="Rfc_newemail_text" placeholder="Your new email...">
+								</div>
+								<div class="rfc_renewemail_warn rfc_pass_warn"><p id="rrw">Some renew email warning for people.</p></div>
+								<div class="rfc_renewemail rfc_pass">
+									<img class="rfc_renewemail_pic rfc_pass_pic" src="../svg/email.svg" alt="email.svg">
+									<input type="text" id="Rfc_renewemail_text" placeholder="Repeat your new email...">
+								</div>
+								<div class="rfc_submit">
+									<div class="rfc_submit_btn" id="Rfc_submit_btn"> <p id="Rfc_submit_btn_p">CHANGE EMAIL</p> </div>
+								</div>
+							</div>
+							<!-- -------------------------------- -->
 							<div class="r_my_purch_box" id="R_my_purch_box">
 
 								<div class="rmb_name_box">
@@ -202,11 +254,10 @@
 											<div class="price"> <p><?php echo $come->price ?></p> </div>
 										</li>
 										<?php
-											}		
+											}
 										?>
 									</ul>
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -225,6 +276,8 @@
 <!-- JS -->
 <script src="../js/jquery.js"></script>
 <script src="../js/burgmenu.js"></script>
-<script src="../js/mycabinet.js"></script>
 <script src="../js/tooltip.js"></script>
+<script src="../js/toast.js"></script>
+<script type="module" src="../js/modalwin.js"></script>
+<script type="module" src="../js/mycabinet.js"></script>
 </HTML>

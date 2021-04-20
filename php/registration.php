@@ -54,7 +54,7 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 		$user->email = $email;
 		$user->password = password_hash($login.$password, PASSWORD_DEFAULT);
 		$user->token = $tok;
-		$user->status = 'user';
+		$user->status = 'client';
 		$user->date = $date;
 		R::store($user);
 
@@ -78,9 +78,9 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 		$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
 
 		$mail->From = 'security@gclipsa.com';
-		$mail->FromName = 'GClipsa security';
+		$mail->FromName = 'GClipsa Security';
 		$mail->addAddress($email);               // Name is optional
-		$mail->addReplyTo('security@gclipsa.com', 'GClipsa security');
+		$mail->addReplyTo('security@gclipsa.com', 'GClipsa Security');
 
 		$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 		$mail->isHTML(true);                                  // Set email format to HTML

@@ -11,6 +11,6 @@ function getUrlQuery($key = null)
 			return $query[$key];
 		}        
 	}
-	return false;
+	return null;
 }
 ?>

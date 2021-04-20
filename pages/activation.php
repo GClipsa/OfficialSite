@@ -3,13 +3,22 @@ require '../php/conndis_mysql.php';
 require	'../php/geturlquery.php';
 require '../php/cookieverify.php';
 $token = getUrlQuery("token");
-$checktoken = R::findOne('users', 'token = ?', array($token));
+if($token == null){
+	$chmail = getUrlQuery("chmail");
+	if($chmail != null){
+		$checkchmail = R::findOne('users', 'changeemail = ?', array($chmail));
+	}
+}
+else{
+	$checktoken = R::findOne('users', 'token = ?', array($token));
+}
+
 $datacc = 0;
-if($checktoken == null)
+if($checktoken == null && $checkchmail == null)
 {
 	header("Location: /");
 }
-else
+else if($checktoken != null)
 {
 	
 	$parts=explode(",",base64_decode($token));
@@ -22,6 +31,17 @@ else
 	    R::store( $user );
 	}
 
+}
+else{
+	$parts=explode(",",base64_decode($chmail));
+	if(strtotime($parts[1]) > strtotime(date('Y-m-d H:i:s')))
+	{
+		$datacc = 2;
+		$user = R::load( 'users', $checkchmail->id);
+	    $user->verified = '1';
+		$user->email = $parts[2];
+	    R::store( $user );
+	}
 }
 ?>
 <!doctype html>
@@ -105,7 +125,12 @@ else
 						} 
 						else if($datacc == 0){
 						?>
-						<p class="сongratulations">Sorry, but this link is out of date. To confirm your email, go to your profile and request it again.</p>
+						<p class="сongratulations">Sorry, but this link is out of date. To confirm or change your email, go to your profile and request it again.</p>
+						<?php
+						}
+						else if($datacc == 2){
+						?>
+						<p class="сongratulations">Congratulations, you have successfully changed and verified your new email on our website.</p>
 						<?php
 						}
 						?>
