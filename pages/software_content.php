@@ -1,11 +1,17 @@
 <?php
 	include "../php/getsoftwarecontent_mysql.php";
 	require '../php/cookieverify.php';
+	require '../php/lang_identify_funcs.php';
 
 	$come = getsoftwarecontent();
+
+	$ml_headers = lang_ml_header();
+	$ml_header = $ml_headers[0];
+	$ml_header_link = $ml_headers[1];
+	$lang = $ml_headers[2];
 ?>
 <!doctype html>
-<HTML> 
+<HTML lang = "<?php echo $lang ?>">
 <HEAD> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,24 +31,28 @@
 				<img class="tp_imgbox_pic" src="../svg/gc.svg" alt="gc.svg">
 				<p class="tp_imgbox_text">GCLIPSA</p>
 			</div>
+			<select class="lang_select" id="Lang_select">
+					<option value="ru"<?php if($lang == "ru") echo "selected"?>>RU</option>
+					<option value="en" <?php if($lang == "en") echo "selected"?>>EN</option>
+			</select>
 			<div class="tp_menu">
 				<div class="tp_menu_buff">
 					<ul class="tp_menu_ul">
-						<li><a href="../index.php">Main</a></li>
-						<li><a href="news.php">News</a></li>
-						<li class="sofware_li"><a href="software.php">Software</a><!-- pages/software.php -->
+						<li><a href="<?php echo $ml_header_link["tp_menu_main"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_main"] ?></a></li>
+						<li><a href="<?php echo $ml_header_link["tp_menu_news"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_news"] ?></a></li>
+						<li class="sofware_li"><a href="<?php echo $ml_header_link["tp_menu_services"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_services"] ?></a><!-- pages/software.php -->
 							<ul class="dropdown">
-								<a href="software.php"><li>all projects</li></a>
-								<a href="#"><li>For streams</li></a>
-								<a href="#"><li>Bots & automation</li></a>
+								<a href="<?php echo $ml_header_link["tp_menu_allprojects"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><li><?php echo $ml_header["tp_menu_allprojects"] ?></li></a>
+								<a href="#"><li><?php echo $ml_header["tp_menu_orderproject"] ?></li></a>
+								<!-- <a href="#"><li>Bots & automation</li></a> -->
 							</ul>
 						</li>
 						<?php if($username == null) { ?>
-						<li><a href="identification.php">My cabinet</a></li>
+						<li><a href="<?php echo $ml_header_link["tp_menu_identification"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_identification"] ?></a></li>
 						<?php 
 						} 
 						else { ?>
-						<li><a href="mycabinet.php"><?php echo $username ?></a></li>
+						<li><a href="<?php echo $ml_header_link["tp_menu_mycabinet"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $username ?></a></li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -53,21 +63,25 @@
 		</div>
 		<div class="rp_menu-burg" id="Rp_menu-burg">
 			<ul class="rp_menu-burg_ul">
-				<li><a href="../index.php">Main</a></li>
-				<li><a href="news.php">News</a></li>
-				<li class="mob_sofware_li"><a href="#">Software</a></li>
+				<li><a href="<?php echo $ml_header_link["tp_menu_main"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_main"] ?></a></li>
+				<li><a href="<?php echo $ml_header_link["tp_menu_news"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_news"] ?></a></li>
+				<li class="mob_sofware_li"><a href="#"><?php echo $ml_header["tp_menu_services"] ?></a></li>
 				<ul class="mob_dropdown">
-					<li><a href="software.php">all projects</a></li>
-					<li><a href="#">For streams</a></li>
-					<li><a href="#">Bots & automation</a></li>
+					<li><a href="<?php echo $ml_header_link["tp_menu_allprojects"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_allprojects"] ?></a></li>
+					<li><a href="<?php echo $ml_header_link["tp_menu_orderproject"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_orderproject"] ?></a></li>
+					<!-- <li><a href="#">Bots & automation</a></li> -->
 				</ul>
 				<?php if($username == null) { ?>
-				<li><a href="identification.php">My cabinet</a></li>
+					<li><a href="<?php echo $ml_header_link["tp_menu_identification"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_identification"] ?></a></li>
 				<?php 
 				} 
 				else { ?>
-				<li><a href="mycabinet.php"><?php echo $username ?></a></li>
+				<li><a href="<?php echo $ml_header_link["tp_menu_mycabinet"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $username ?></a></li>
 				<?php } ?>
+				<li><select class="lang_select_burg">
+					<option value="ru"<?php if($lang == "ru") echo "selected"?>>LANGUAGE: RU</option>
+					<option value="en" <?php if($lang == "en") echo "selected"?>>LANGUAGE: EN</option>
+				</select></li>
 			</ul>
 		</div>
 
@@ -142,4 +156,6 @@
 <script src="../js/soft_content_slider.js"></script>
 <script src="../js/magnific-popup.min.js"></script>
 <script src="../js/popup_image.js"></script>
+<script src="../js/mod_url_params.js"></script>
+<script src="../js/langchangelistener.js"></script>
 </HTML>

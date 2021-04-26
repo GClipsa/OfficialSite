@@ -16,6 +16,7 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 	$password = $_POST["password"];
 	$repassword = $_POST["repassword"];
 
+	if(isset($_POST['lang'])){$lang = $_POST["lang"];}else{$lang = "en";}
 
 	$checkmail = R::find('users', 'email = ?', array($email));
 	$checklogin = R::find('users', 'login = ?', array($login));
@@ -64,7 +65,7 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 		<w:anchorlock/>
 		<center style='color:#2f353e;font-family:sans-serif;font-size:13px;font-weight:bold;'>Confirm email</center>
 	  </v:roundrect>
-	<![endif]--><a href='https://gclipsa.com/pages/activation?token=".$tok."'
+	<![endif]--><a href='https://gclipsa.com/pages/activation?token=".$tok."&lang=".$lang."'
 	style='background-color:#ff9b8f;border:1px solid #e6e6e8;border-radius:18px;color:#2f353e;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:36px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;'>Confirm email</a></div>
 			<br><br>This link will be available within 24 hours.";
 		

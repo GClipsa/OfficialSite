@@ -21,6 +21,10 @@ html,body{
     -ms-user-select: none;
      user-select: none;
 }
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
 /*=======================================================================*/
 @font-face {
     font-family: 'Bebas Neue Pro';
@@ -36,7 +40,26 @@ html,body{
 	font-weight: 400; 
 	font-style: normal; 
 } 
-
+/*плавная загрузка страниц*/
+@-webkit-keyframes fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-moz-keyframes    fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-o-keyframes      fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@keyframes         fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+body{
+	background: url('../images/background.svg');
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1001;
+ }
+.main_body {
+	-webkit-animation: fade-in 0.5s linear; /* Safari 4+ */
+	-moz-animation: fade-in 0.5s linear; /* Fx 5+ */
+	-o-animation: fade-in 0.5s linear; /* Opera 12+ */
+	animation: fade-in 0.5s linear; /* IE 10+, Fx 29+ */
+}
 *{
 	font-family: "Bebas Neue Pro";
 }
@@ -73,7 +96,7 @@ li, h1{
 	/*grid-area: top_panel;*/
 	display: grid;
 	width: 100%;
-	grid-template: 70px / 60px 315px 1fr 60px;
+	grid-template: 70px / 60px 250px 1fr 70px;
 	grid-template-areas: 
 	"buffl imgbox menu buffr";
 	/*background-color: #6b2828;*/
@@ -92,7 +115,7 @@ li, h1{
 
 .tp_imgbox_pic{
 	height:80%;
-	margin-top:2.4%;
+	margin-top:2.9%;
 
 	/*background-color: lightgray;*/
 }
@@ -102,6 +125,7 @@ li, h1{
 	margin-left: 2.3%;
 	background: linear-gradient( 190deg, #440000 0%, #170000 100%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 }
 
@@ -109,8 +133,8 @@ li, h1{
 	grid-area: menu;
 	display: grid;
 	margin-bottom: 3px;
-	grid-template-columns: 1fr auto;
-	grid-template-areas: "center menu";
+	grid-template-columns: 1fr auto auto;
+	grid-template-areas: "center lang menu";
 	/*background-color: gray;*/
 	z-index: 1;
 }
@@ -121,6 +145,34 @@ li, h1{
 	/*margin-top:1px;*/
 	/*background-color: darkgray;*/
 }
+
+.lang_select{
+	grid-area: buffr;
+	font-size: 24px;
+	margin: 0 0 4px 20px;
+	width: 24px;
+	background-color: transparent;
+	color: white;
+	-webkit-appearance: none;/* Chrome */
+    -moz-appearance: none;/* Firefox */
+	appearance: none;/* убираем дефолнтные стрелочки */
+	overflow: hidden;
+	cursor: pointer;
+	transition-property: color;
+    transition-duration: 0.2s;
+	border-radius: 10%;
+}
+.lang_select:hover{
+	transition-property: color;
+    transition-duration: 0.2s;
+	background-color: transparent;
+	color: #2e0000;
+}
+.lang_select option{
+	color:white;
+	background-color:#6c1e1e;
+  }
+
 .tp_menu_ul{
 	grid-auto-flow: column;
 	list-style: none;
@@ -153,7 +205,7 @@ li, h1{
 	transition-property: all;
 	transition-duration: 0.4s;
 	opacity: 1;
-	width: 200%;
+	width: 11vw;
 }
 
 /*--------------------------------------------------------MODULES------------*/
@@ -176,7 +228,7 @@ li, h1{
 	visibility: hidden;
 	transition-property: all;
 	transition-duration: 0.4s;
-	width: 125%;
+	width: 7.5vw;
 	opacity:0;
 	z-index: -1;
 	/*text-align: center;*/
@@ -287,15 +339,22 @@ li, h1{
 		"footer";
 	}
 	.top_panel{
-		grid-template: 100px / 30px 450px 1fr 10px;
+		grid-template: 100px / 30px 350px 40px 1fr 0;
 		grid-template-areas: 
-		"buffl imgbox menu buffr";
+		"buffl imgbox lang menu buffr";
+	}
+
+	.lang_select{
+		grid-area: lang;
+		font-size: 35px;
+		margin: 0 0 4px 0;
 	}
 
 	.tp_imgbox_text{
 		font-size: 83px;
 	}
 	.tp_burg-lines{
+		grid-area: menu;
 		display:grid;
 		position:absolute;
 		width:100px;
@@ -361,6 +420,7 @@ li, h1{
     	transition-property: width;
     	transition-duration: 0.3s;
 	}
+	.lang_select_burg{display: none;}
 }
 /*-----------------------------------------------------------------MEDIA 660--------------*/
 @media (max-width: 660px){
@@ -373,9 +433,9 @@ li, h1{
 		"footer";
 	}
 	.top_panel{
-		grid-template: 70px / 5px 315px 1fr 10px;
+		grid-template: 70px / 5px 250px 40px 1fr 10px;
 		grid-template-areas: 
-		"buffl imgbox menu buffr";
+		"buffl imgbox lang menu buffr";
 	}
 	.tp_imgbox_text{
 		font-size: 60px;
@@ -400,11 +460,49 @@ li, h1{
 	.tp_burg-lines:after{
 		bottom: 18px;
 	}
+
+	.lang_select{
+		grid-area: lang;
+		font-size: 40px;
+		margin: 0 0 4px 0;
+	}
+	.lang_select_burg{display: none;}
 }
-@media (max-width: 400px){
+@media (max-width: 425px){
 	.rp_menu-burg-active{
 		width: 100%;
 	}
+	.top_panel{
+		grid-template: 70px / 5px 250px 1fr 10px;
+		grid-template-areas: 
+		"buffl imgbox menu buffr";
+	}
+	.lang_select{
+		display: none;
+	}
+
+	.lang_select_burg{
+		display: table;
+		font-size: 30px;
+		/* margin: 0 0 4px 20px; */
+		background-color: transparent;
+		color: white;
+		-webkit-appearance: none;/* Chrome */
+		-moz-appearance: none;/* Firefox */
+		appearance: none;/* убираем дефолнтные стрелочки */
+		overflow: hidden;
+		cursor: pointer;
+		transition-property: color;
+		transition-duration: 0.2s;
+		border-radius: 10%;
+
+		/* padding: 0 350px 0 20px; */
+		padding: 0 350px 0 20px;
+	}
+	.lang_select_burg option{
+		color:white;
+		background-color:#6c1e1e;
+	  }
 }
 
 /*-------------------------------------------изменение scroll*/

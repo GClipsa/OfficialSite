@@ -58,6 +58,7 @@ Toast.create = function (text, color) {
   toastClose.textContent = '×';
   toast.appendChild(toastClose);
   fragment.appendChild(toast);
+  opaсAnimating(toast, 100, "show");
   return fragment;
 };
 
@@ -85,6 +86,7 @@ Toast.add = function (params) {
   var toasts = document.querySelectorAll('.toast');
   var toast = new Toast(toasts[toasts.length - 1], { autohide: config.autohide, delay: config.delay });
   toast.show();
+  opaсAnimating(toast, 100, "show");
   return toast;
 }
 
@@ -94,3 +96,24 @@ document.addEventListener('hidden.toast', function (e) {
     element.parentNode.removeChild(element);
   }
 });
+
+function opaсAnimating(el, speed, state) {
+  el.style.opacity = 0;
+  var step = 1 / speed;
+  if(state=="show")
+  {
+  var interval = setInterval(function() {
+    if (+el.style.opacity >= 1)
+    clearInterval(interval);
+      el.style.opacity = +el.style.opacity + step;
+    }, speed / 1000);
+  }
+  else if(state=="hide")
+  {
+    var interval = setInterval(function() {
+      if (+el.style.opacity >= 1)
+        clearInterval(interval);
+        el.style.opacity = -el.style.opacity - step;
+        }, speed / 1000);
+  }
+  };

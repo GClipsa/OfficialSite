@@ -82,6 +82,8 @@ $(document).ready(function(){
         {
             activate_de_pics(4);
         }
+        var FamItembox = document.getElementById('Familiar_box_items');
+        opaсAnimating(FamItembox, 100, "show");
         pagetoup();
     }
     function func_complete_right(){
@@ -89,6 +91,8 @@ $(document).ready(function(){
         {
             activate_de_pics(5);
         }
+        var FamItembox = document.getElementById('Familiar_box_items');
+        opaсAnimating(FamItembox, 100, "show");
         pagetoup();
     }
 
@@ -160,20 +164,41 @@ $(document).ready(function(){
     }
 
     function func_complete_next(){
+        var FamItembox = document.getElementById('Familiar_box_items');
+        opaсAnimating(FamItembox, 100, "show");
         pagetoup();
     }
     function func_complete_prev(){
+        var FamItembox = document.getElementById('Familiar_box_items');
+        opaсAnimating(FamItembox, 100, "show");
         pagetoup();
     }
 
-    function func_upnews(pic, desc, news){
-        var code = '<div class="familiar_box_item">\
-                        <img class="familiar_box_item_pic" src="'+pic+'" alt="'+pic+'">\
-                        <a href="'+news+'"><div class="familiar_box_item_overlay">\
-                            <div class="familiar_box_item_overlay_text"><p>'+desc+'</p></div> \
-                        </div></a>\
-                    </div>';
-        $('.familiar_box_items').append(code);
+
+    var searchParams = getUrlParams(window.location.search);
+    if(searchParams[0]["lang"]!=undefined)
+    {
+        function func_upnews(pic, desc, news){
+            var code = '<div class="familiar_box_item">\
+                            <img class="familiar_box_item_pic" src="'+pic+'" alt="'+pic+'">\
+                            <a href="'+news+"&lang"+"="+searchParams[0]["lang"]+'"><div class="familiar_box_item_overlay">\
+                                <div class="familiar_box_item_overlay_text"><p>'+desc+'</p></div> \
+                            </div></a>\
+                        </div>';
+            $('.familiar_box_items').append(code);
+        }
+    }
+    else
+    {
+        function func_upnews(pic, desc, news){
+            var code = '<div class="familiar_box_item">\
+                            <img class="familiar_box_item_pic" src="'+pic+'" alt="'+pic+'">\
+                            <a href="'+news+"&lang=en"+'"><div class="familiar_box_item_overlay">\
+                                <div class="familiar_box_item_overlay_text"><p>'+desc+'</p></div> \
+                            </div></a>\
+                        </div>';
+            $('.familiar_box_items').append(code);
+        }
     }
 
     function activate_de_pics(num){

@@ -1,6 +1,6 @@
 <?php
 require 'conndis_mysql.php';
-include "geturlquery.php";
+require_once "geturlquery.php";
 
 function getsoftwarecontent()
 {	

@@ -49,6 +49,7 @@ html,body{
 	color: white;
 	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	/*background-color: lightgray;*/
 }
@@ -78,19 +79,49 @@ html,body{
 	position:relative;
 }
 
+.l_username_group{
+	display: flex;
+}
+
 .l_username{
 	border: 1px solid;
 	border-color: #8c5858;
-	width: 90%;
+	width: 73%;
 	margin-left: 5%;
+	margin-right: -3%;
 	margin-top: 5%;
 	text-align: center;
+	
 }
 .l_username p{
 	text-transform: uppercase;
 	color: white;
 	font-size: 1.5vw;
-	padding: 1% 0;
+	padding: 2.25% 0 1% 0;
+}
+.l_support_pic{
+	border: 1px solid;
+	border-color: #8c5858;
+	background-color: #391212;
+	margin-left: 5%;
+	width: 15%;
+	margin-top: 5%;
+	justify-content: center;
+	/*margin: auto;*/
+}
+
+.l_support_pic img{
+	padding: 5%;
+	width:70%;
+	margin-left: 15%;
+	height: 100%;
+}
+
+.l_support_pic:hover{
+	transition-property: background-color;
+  	transition-duration: 0.2s;
+	background-color: #491212;
+	cursor: pointer;
 }
 
 .l_balance_group{
@@ -130,6 +161,7 @@ html,body{
 
 .l_balance_pic{
 	border: 1px solid;
+	
 	border-color: #8c5858;
 	background-color: #391212;
 	margin-left: 2%;
@@ -153,6 +185,7 @@ html,body{
 }
 .l_balance_pic img{
 	width: 100%;
+	padding: 5%;
 	/*margin-top:25%;*/
 	/*padding-top: 10%;*/
 	/*background-color: darkgray;*/
@@ -194,13 +227,19 @@ html,body{
 /*---------------------------------------------------right menu*/
 .rightmenu{
 	grid-area: right;
+	display: grid;
 	border: 1px solid;
 	border-color: #8c5858;
 	background-color: #521e1e;
 	/*min-height: 20vw;*/
 }
+.rightmenu_buff{
+	margin: auto 0;
+	/* background-color: gray; */
+}
 .r_profile_box{
 	display: auto;
+	margin-top: -2vw;
 	/*min-height: 20vw;*/
 }
 .rpb_name{
@@ -237,6 +276,8 @@ html,body{
 	border: 1px solid;
 	border-color: #8c5858;
 	width: 83%;
+	overflow-x:hidden;
+	overflow-y:hidden;
 }
 .rpb_mail p{
 	color: white;
@@ -493,14 +534,16 @@ html,body{
 	/*background-color: gray;*/
 }
 
-.rmb_total{
+.rmb_total_soft{
 	width: 30%;
 	/*background-color: darkgray;*/
 	border: 1px solid;
 	border-color: #8c5858;
+	background-color: #8c5858;
+	cursor: pointer;
 	text-align: center;
 }
-.rmb_total p{
+.rmb_total_soft p{
 	color: white;
 	font-size: 1.3vw;
 	padding: 1.5% 0 0.5% 1%;
@@ -517,15 +560,23 @@ html,body{
 
 	/*padding: 1% 0 0.5% 0;*/
 }
-.rmb_total1{
+.rmb_total_orders{
 	width: 30%;
 	margin-left: 5%;
 	/*background-color: darkgray;*/
+	cursor: pointer;
 	border: 1px solid;
 	border-color: #8c5858;
 	text-align: center;
+	transition-property: background-color;
+	transition-duration: 0.2s;
 }
-.rmb_total1 p{
+.rmb_total_orders:hover{
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	background-color: #8c5858;
+}
+.rmb_total_orders p{
 	color: white;
 	font-size: 1.3vw;
 	padding: 1.5% 0 0.5% 1%;
@@ -709,14 +760,31 @@ html,body{
 	  	color: white;
 	}
 	.l_username{
-		width: 90%;
+		width: 77%;
 		margin-left: 5%;
 		margin-top: 5%;
 	}
 	.l_username p{
 		color: white;
 		font-size: 5vw;
-		padding-top: 1%;
+		padding: 1% 0 0.75% 0;
+	}
+	.l_support_pic{
+		border: 1px solid;
+		border-color: #8c5858;
+		background-color: #391212;
+		margin-left: 5%;
+		width: 11%;
+		margin-top: 5%;
+		justify-content: center;
+		/*margin: auto;*/
+	}
+	
+	.l_support_pic img{
+		padding: 5%;
+		width:70%;
+		margin-left: 15%;
+		height: 100%;
 	}
 
 	.l_balance_group{
@@ -760,7 +828,7 @@ html,body{
 		padding: 2% 0;
 	}
 
-	.rmb_total p{
+	.rmb_total_soft p{
 		color: white;
 		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
@@ -773,7 +841,7 @@ html,body{
 		/*padding: 1% 0 0.5% 0;*/
 	}
 	
-	.rmb_total1 p{
+	.rmb_total_orders p{
 		color: white;
 		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
@@ -782,6 +850,7 @@ html,body{
 	.r_profile_box{
 		display: auto;
 		min-height: 45vw;
+		margin-top: 0vw;
 	}
 	.rpb_name p{
 		color: white;
@@ -991,6 +1060,7 @@ html,body{
 		color: white;
 		background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		/*background-color: lightgray;*/
 	}

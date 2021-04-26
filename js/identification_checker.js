@@ -48,7 +48,7 @@ $(document).ready(function(){
             complete: func_complete_auth
         });
 	}
-
+	
 	function func_success_auth(data){
         data = JSON.parse(data);
         if(data == "php1")
@@ -64,7 +64,8 @@ $(document).ready(function(){
             document.getElementById('Auth_login_text').value = "";
             document.getElementById('Auth_password_text').value = "";
 			auth_btn_unlock ('auto');
-            location.href = "/";
+			var searchParams = getUrlParams(window.location.search);
+            location.href = "/"+"?lang"+"="+searchParams[0]["lang"];
         }
 		auth_btn_unlock ('auto');
     }
@@ -104,16 +105,18 @@ $(document).ready(function(){
 		if(error == "")
 		{
 			warning_message_clear();
-			forgetpass(email);
+			var searchParams = getUrlParams(window.location.search);
+			forgetpass(email, searchParams[0]["lang"]);
 			forget_btn_unlock ('none');
 		}
 	});
 
-	function forgetpass(emailT) {
+	function forgetpass(emailT, langT) {
 		$.ajax({
             url:"../php/forgetpass.php",
             type:"POST",
-            data:({	email: emailT }),
+            data:({	email: emailT,
+					lang: langT,}),
             dataType:"text",
             success: func_success_forget,
             complete: func_complete_forget
@@ -122,6 +125,7 @@ $(document).ready(function(){
 
 	function func_success_forget(data){
         data = JSON.parse(data);
+		var searchParams = getUrlParams(window.location.search);
         if(data == "php1")
         {
         	warning_message("#flw", "Your email must be real and in length smaller than 75 symbols.");
@@ -137,12 +141,12 @@ $(document).ready(function(){
 		else if(data == "mailerr")
 		{
 			document.getElementById('Forget_email_text').value = "";
-			create_modal_window("Sorry, but unfortunately there was some error when sending a password recovery message to the specified email, please try again or contact support.", "/");
+			create_modal_window("Sorry, but unfortunately there was some error when sending a password recovery message to the specified email, please try again or contact support.", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }
 		else if(data == "phpOK")
 		{
 			document.getElementById('Forget_email_text').value = "";
-			create_modal_window("A message was sent to the specified email with instructions on how to restore access to your account.", "/");
+			create_modal_window("A message was sent to the specified email with instructions on how to restore access to your account.", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }
 		forget_btn_unlock ('auto');
     }
@@ -192,7 +196,8 @@ $(document).ready(function(){
 		if(error == "")
 		{
 			warning_message_clear();
-			registration(login, email, password, repassword);
+			var searchParams = getUrlParams(window.location.search);
+			registration(login, email, password, repassword, searchParams[0]["lang"]);
 			reg_btn_unlock ('none');
 		}
     });
@@ -204,7 +209,8 @@ $(document).ready(function(){
             data:({	login: loginT,
             		email: emailT,
             		password: passwordT,
-            		repassword: repasswordT}),
+            		repassword: repasswordT,
+            		lang: langT}),
             dataType:"text",
             success: func_success_reg,
             complete: func_complete_reg
@@ -213,6 +219,7 @@ $(document).ready(function(){
 
 	function func_success_reg(data){
         data = JSON.parse(data);
+		var searchParams = getUrlParams(window.location.search);
         if(data == "php1")
         {
         	warning_message("#rlw", "Your login must be in length more than 4 and smaller than 25 symbols.");
@@ -231,13 +238,13 @@ $(document).ready(function(){
             document.getElementById('Reg_email_text').value = "";
             document.getElementById('Reg_password_text').value = "";
             document.getElementById('Reg_repassword_text').value = "";
-            create_modal_window("Congratulations, you have successfully registered! But for some reason, an error occurred when sending a message to the email address you provided, we strongly recommend contacting support! Thank you for understanding!", "/");
+            create_modal_window("Congratulations, you have successfully registered! But for some reason, an error occurred when sending a message to the email address you provided, we strongly recommend contacting support! Thank you for understanding!", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }else if(data == "phpOK"){
             document.getElementById('Reg_login_text').value = "";
             document.getElementById('Reg_email_text').value = "";
             document.getElementById('Reg_password_text').value = "";
             document.getElementById('Reg_repassword_text').value = "";
-        	create_modal_window("Congratulations, you have successfully registered! An email has been sent to the email address you provided with a link to verify this email address in your account.", "/");
+        	create_modal_window("Congratulations, you have successfully registered! An email has been sent to the email address you provided with a link to verify this email address in your account.", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }
 		reg_btn_unlock ('auto');
     }

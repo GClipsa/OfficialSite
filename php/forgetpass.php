@@ -12,6 +12,8 @@ if(isset($_POST['email']))
 {
     $email = $_POST["email"];
 
+	if(isset($_POST['lang'])){$lang = $_POST["lang"];}else{$lang = "en";}
+
 	$user = R::findOne('users', 'email = ?', array($email));
 	$error = "";
     if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 75){
@@ -50,8 +52,6 @@ if(isset($_POST['email']))
 		$user->resetcode = $rcode;
 	    R::store( $user );
 
-
-
         $mailmess = "Hello, you just requested a password recovery for your account on the gclipsa.com website, if you didn’t do it, do not take any further action, you can simply delete this message.
 		If it is you who sent the request, please click on the button below to change the password for your account.<br><br>
 		<div><!--[if mso]>
@@ -59,7 +59,7 @@ if(isset($_POST['email']))
     <w:anchorlock/>
     <center style='color:#2f353e;font-family:sans-serif;font-size:13px;font-weight:bold;'>Reset password</center>
   </v:roundrect>
-<![endif]--><a href='https://gclipsa.com/pages/passreset?token=".$rpass."&"."code=".$rcode."'
+<![endif]--><a href='https://gclipsa.com/pages/passreset?token=".$rpass."&"."code=".$rcode."&lang=".$lang."'
 style='background-color:#ff9b8f;border:1px solid #e6e6e8;border-radius:18px;color:#2f353e;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:36px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;'>Reset password</a></div>
 		<br><br>This link will be available within 1 hour.";
 		

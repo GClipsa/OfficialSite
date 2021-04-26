@@ -46,6 +46,7 @@ html,body{
 	color: white;
 	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	/*background-color: lightgray;*/
 }
@@ -252,6 +253,7 @@ html,body{
 .downbuy_text_p{
 	grid-area: text;
 	font-size: 1.7vw;
+	text-transform: uppercase;
 	color: white;
 	/*background-color:lightgray;*/
 }
@@ -317,6 +319,10 @@ html,body{
 	}
 }
 @media (max-width: 425px){
+
+	.familiar_box{
+		margin-top: 2.7vw;
+	}
 	.welcome_box{
 		grid-area: head;
 		text-align: center;
@@ -332,6 +338,7 @@ html,body{
 		color: white;
 		background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 		-webkit-background-clip: text;
+		background-clip: text;
 		  -webkit-text-fill-color: transparent;
 		/*background-color: lightgray;*/
 	}

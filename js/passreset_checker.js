@@ -58,12 +58,13 @@ $(document).ready(function(){
         });
 	}
     function func_success_reset(data){
+		var searchParams = getUrlParams(window.location.search);
         data = JSON.parse(data);
         if(data == "php1"){
             document.getElementById('Reset_code_text').value = "";
             document.getElementById('Reset_pass_text').value = "";
             document.getElementById('Reset_repass_text').value = "";
-        	create_modal_window("Unfortunately, your code turned out to be incorrect and we did not reset or change your password.", "/");
+        	create_modal_window("Unfortunately, your code turned out to be incorrect and we did not reset or change your password.", "/"+"?lang="+searchParams[0]["lang"]);
         }else if(data == "php2"){
         	warning_message("#rpw", "Your password must be in length more than 6 and smaller than 25 symbols.");
         }else if(data == "php3"){
@@ -72,7 +73,7 @@ $(document).ready(function(){
             document.getElementById('Reset_code_text').value = "";
             document.getElementById('Reset_pass_text').value = "";
             document.getElementById('Reset_repass_text').value = "";
-        	create_modal_window("Congratulations, you have successfully changed the password on your account!", "/pages/identification");
+        	create_modal_window("Congratulations, you have successfully changed the password on your account!", "/pages/identification"+"?lang="+searchParams[0]["lang"]);
         }
 		reset_btn_unlock ('auto');
     }

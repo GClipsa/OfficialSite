@@ -44,6 +44,7 @@ html,body{
 	color: white;
 	background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	/*background-color: lightgray;*/
 }
@@ -69,6 +70,7 @@ html,body{
 	grid-area: center;
 	background: linear-gradient(-60deg, #b04343 31%, #951d1d 50%, #eb7171 65%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	font-size: 3vw;
 	font-family: "Oswald";
@@ -89,6 +91,7 @@ html,body{
 		color: white;
 		background: linear-gradient(-60deg, #b04343 31%, #851d1d 50%, #eb7171 65%);
 		-webkit-background-clip: text;
+		background-clip: text;
 		  -webkit-text-fill-color: transparent;
 		/*background-color: lightgray;*/
 	}

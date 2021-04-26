@@ -11,6 +11,7 @@ $(document).ready(function(){
 
 		var added_item = document.getElementById('R_profile_box');
 		added_item.style.display = 'block';
+		opaсAnimating(added_item, 100 ,"show");
 	}
 
 	$("#Rpb_change_password").on("click", function()
@@ -18,14 +19,17 @@ $(document).ready(function(){
     	hideall();
 		var added_item = document.getElementById('R_profile_changepass_box');
 		added_item.style.display = 'block';
+		opaсAnimating(added_item, 100 ,"show");
     });
 
 	$("#Rpb_confirm").on("click", function()
-    {
+    {   var searchParams = getUrlParams(window.location.search);
+		var langT = searchParams[0]["lang"];
     	$.ajax({
             url:"../php/reconfirmemail.php",
             type:"POST",
-            data:({	data: "reconfirm" }),
+            data:({	data: "reconfirm",
+					lang: langT }),
             dataType:"text",
             success: func_success_reconfirm
         });
@@ -63,6 +67,7 @@ $(document).ready(function(){
     	hideall();
 		var added_item = document.getElementById('R_profile_changeemail_box');
 		added_item.style.display = 'block';
+		opaсAnimating(added_item, 100 ,"show");
     });
 
 
@@ -106,18 +111,20 @@ $(document).ready(function(){
 		if(error == "")
 		{
 			warning_message_clear();
-			changeemail(password, newemail, renewmail);
+			var searchParams = getUrlParams(window.location.search);
+			changeemail(password, newemail, renewmail, searchParams[0]["lang"]);
 			rfc_btn_unlock ('none');
 		}
     });
 
-	function changeemail(passwordT, newemailT, renewmailT) {
+	function changeemail(passwordT, newemailT, renewmailT, langT) {
 		$.ajax({
             url:"../php/changeemail.php",
             type:"POST",
             data:({	password: passwordT,
 					newemail: newemailT,
-					renewmail: renewmailT}),
+					renewmail: renewmailT,
+					lang: langT}),
             dataType:"text",
             success: func_success_cem,
             complete: func_complete_cem
@@ -126,6 +133,11 @@ $(document).ready(function(){
 
 	function func_success_cem(data){
         data = JSON.parse(data);
+
+		rfc_btn_unlock ('auto');
+
+		var searchParams = getUrlParams(window.location.search);
+
         if(data == "php1"){
         	warning_message("#rpw", "Your password must be in length more than 6 and smaller than 25 symbols.");
 		}else if(data == "php1.1"){
@@ -144,14 +156,14 @@ $(document).ready(function(){
 		}else if(data == "php5"){
             document.getElementById('Rfc_pass_text').value = "";
             document.getElementById('Rfc_newemail_text').value = "";
-            document.getElementById('Rfc_renewemail_text').value = "";			
+            document.getElementById('Rfc_renewemail_text').value = "";		
 			Toast.add({
 				text: 'Unfortunately, we cannot change your email, as this email address is already registered in your account.',
 				color: '#852809', autohide: true, delay: 8000 });
 		}else if(data == "mailerr"){
             document.getElementById('Rfc_pass_text').value = "";
             document.getElementById('Rfc_newemail_text').value = "";
-            document.getElementById('Rfc_renewemail_text').value = "";			
+            document.getElementById('Rfc_renewemail_text').value = "";	
 			Toast.add({
 				text: 'Sorry, there was an error while sending instructions to your new email, please try again later or contact support.',
 				color: '#852809', autohide: true, delay: 8000 });
@@ -159,9 +171,8 @@ $(document).ready(function(){
             document.getElementById('Rfc_pass_text').value = "";
             document.getElementById('Rfc_newemail_text').value = "";
             document.getElementById('Rfc_renewemail_text').value = "";
-        	create_modal_window("Congratulations, we have successfully sent you instructions to your new mail, check your email!", "/");
+        	create_modal_window("Congratulations, we have successfully sent you instructions to your new mail, check your email!", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }
-		rfc_btn_unlock ('auto');
     }
 
     function func_complete_cem(){
@@ -226,6 +237,11 @@ $(document).ready(function(){
 	}
 	function func_success_cep(data){
         data = JSON.parse(data);
+
+		rpc_btn_unlock ('auto');
+
+		var searchParams = getUrlParams(window.location.search);
+
         if(data == "php1"){
         	warning_message("#row", "Your password must be in length more than 6 and smaller than 25 symbols.");
 		}else if(data == "php1.1"){
@@ -247,9 +263,8 @@ $(document).ready(function(){
             document.getElementById('Rpc_oldpass_text').value = "";
             document.getElementById('Rpc_newpass_text').value = "";
             document.getElementById('Rpc_newrepass_text').value = "";
-        	create_modal_window("Congratulations, you have successfully changed your password, please log into your account using your new password.", "/");
+        	create_modal_window("Congratulations, you have successfully changed your password, please log into your account using your new password.", "/"+"?lang"+"="+searchParams[0]["lang"]);
         }
-		rpc_btn_unlock ('auto');
     }
 
 	function func_complete_cep(){
@@ -263,14 +278,15 @@ $(document).ready(function(){
 
 	function showmypurch() {
 		hideall();
-
 		var added_item = document.getElementById('R_my_purch_box');
 		added_item.style.display = 'block';
+		opaсAnimating(added_item, 100 ,"show");
 	}
 
 	$("#L_signout").on("click", function()
     {
-    	document.location.replace("/pages/identification.php");
+		var searchParams = getUrlParams(window.location.search);
+    	document.location.replace("/pages/identification"+"?lang"+"="+searchParams[0]["lang"]);
     });
 
 	$(".ser_num").on("click", function(event)
@@ -298,8 +314,10 @@ $(document).ready(function(){
 		added_item.style.display = 'none';
 
 		var added_item = document.getElementById('R_profile_changeemail_box');
-		added_item.style.display = 'none';
+		added_item.style.display = 'none';	
 	}
+
+
 
 	//--------------------------------------------------------warning_message
     function warning_message(id, text){
