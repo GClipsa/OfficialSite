@@ -88,7 +88,7 @@
 				else { ?>
 				<li><a href="<?php echo $ml_header_link["tp_menu_mycabinet"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $username ?></a></li>
 				<?php } ?>
-				<li><select class="lang_select_burg">
+				<li><select class="lang_select_burg" id="Lang_select_burg">
 					<option value="ru"<?php if($lang == "ru") echo "selected"?>>LANGUAGE: RU</option>
 					<option value="en" <?php if($lang == "en") echo "selected"?>>LANGUAGE: EN</option>
 				</select></li>

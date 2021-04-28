@@ -347,6 +347,7 @@ li, h1{
 	.lang_select{
 		grid-area: lang;
 		font-size: 35px;
+		width: 35px;
 		margin: 0 0 4px 0;
 	}
 
@@ -465,6 +466,7 @@ li, h1{
 		grid-area: lang;
 		font-size: 40px;
 		margin: 0 0 4px 0;
+		width: 40px;
 	}
 	.lang_select_burg{display: none;}
 }
