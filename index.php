@@ -62,7 +62,7 @@ $lang = $ml_headers[2];
 						<li class="sofware_li"><a href="pages/<?php echo $ml_header_link["tp_menu_services"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_services"] ?></a><!-- pages/software.php -->
 							<ul class="dropdown">
 								<a href="pages/<?php echo $ml_header_link["tp_menu_allprojects"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><li><?php echo $ml_header["tp_menu_allprojects"] ?></li></a>
-								<a href="#"><li><?php echo $ml_header["tp_menu_orderproject"] ?></li></a>
+								<a href="pages/<?php echo $ml_header_link["tp_menu_orderproject"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><li><?php echo $ml_header["tp_menu_orderproject"] ?></li></a>
 								<!-- <a href="#"><li>Bots & automation</li></a> -->
 							</ul>
 						</li>
@@ -87,7 +87,7 @@ $lang = $ml_headers[2];
 				<li class="mob_sofware_li"><a href="#"><?php echo $ml_header["tp_menu_services"] ?></a></li>
 				<ul class="mob_dropdown">
 					<li><a href="pages/<?php echo $ml_header_link["tp_menu_allprojects"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_allprojects"] ?></a></li>
-					<li><a href="<?php echo $ml_header_link["tp_menu_orderproject"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_orderproject"] ?></a></li>
+					<li><a href="pages/<?php echo $ml_header_link["tp_menu_orderproject"]."?".http_build_query(array_merge(['lang' => $lang]));?>"><?php echo $ml_header["tp_menu_orderproject"] ?></a></li>
 					<!-- <li><a href="#">Bots & automation</a></li> -->
 				</ul>
 				<?php if($username == null) { ?>
