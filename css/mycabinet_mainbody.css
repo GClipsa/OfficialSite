@@ -832,8 +832,8 @@ html,body{
 		color: white;
 		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
+		margin-top: 11%;
 	}
-
 	.rmb_name p{
 		color: white;
 		font-size: 4.5vw;
@@ -845,6 +845,7 @@ html,body{
 		color: white;
 		font-size: 3.25vw;
 		padding: 1.5% 0 0.5% 1%;
+		margin-top: 11%;
 	}
 	/*------------------profile*/
 	.r_profile_box{

@@ -30,6 +30,7 @@
 <link rel="stylesheet" type="text/css" href="../css/tooltip.css">
 <link rel="stylesheet" type="text/css" href="../css/modalwin.css">
 <link rel="stylesheet" type="text/css" href="../css/dropdownlist.css">
+<link rel="stylesheet" type="text/css" href="../css/upload.css">
 <TITLE>GClipsa Order Project</TITLE> 
 </HEAD> 
 <BODY> 
@@ -155,11 +156,23 @@
 								</div>
 							</div>
 							<div class="dragdrop">
-								<div class="info_text">
-									<p>Send us files that will help us make it faster and better.</p>
+								<img src="../svg/upload.svg" alt="upload.svg">
+								<div class="dragdrop_prebox">
+									<div class="info_text">
+										<p>Send us files that will help us make it faster and better.</p>
+									</div>
+									<div class="dragdrop_box">
+
+									</div>
+									<div id="Dragdrop_files">
+
+									</div>
 								</div>
-								<div class="dragdrop_box">
-									
+							</div>
+							<div class="sendorder">
+								<img src="../svg/send.svg" alt="send.svg">
+								<div class="s_button" id="S_button">
+									<p>send order to gclipsa</p>
 								</div>
 							</div>
                         </div>
@@ -183,8 +196,10 @@
 <script src="../js/opacAnimating.js"></script>
 <script src="../js/toast.js"></script>
 <script type="module" src="../js/modalwin.js"></script>
-<script type="module" src="../js/mycabinet.js"></script>
+<script type="module" src="../js/order_project.js"></script>
 <script src="../js/mod_url_params.js"></script>
 <script src="../js/langchangelistener.js"></script>
 <script src="../js/dropdownlist.js"></script>
+<script src="../js/core.js"></script>
+<script src="../js/upload.js"></script>
 </HTML>

@@ -13,7 +13,7 @@
 	$colvo = 6;
 	$result = getnumberlines("prenews");
 
-	$colvopages = ceil(($result/$colvo)+0.4);
+	$colvopages = ceil(($result/$colvo));
 	
 	if (isset($_SESSION['newspage']))
 	{

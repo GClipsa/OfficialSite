@@ -97,7 +97,8 @@ html, body {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: body;
-  margin-top: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto;
@@ -252,30 +253,30 @@ html, body {
   }
 }
 
-.familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box img {
+.familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop img, .familiar_box .familiar_box_items .form_box .sendorder img {
   width: 2.3vw;
   margin-right: 5px;
 }
 
 @media (max-width: 1200px) {
-  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box img {
+  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop img, .familiar_box .familiar_box_items .form_box .sendorder img {
     width: 3vw;
   }
 }
 
 @media (max-width: 768px) {
-  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box img {
+  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop img, .familiar_box .familiar_box_items .form_box .sendorder img {
     width: 4vw;
   }
 }
 
 @media (max-width: 425px) {
-  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box img {
+  .familiar_box .familiar_box_items .form_box .dropper img, .familiar_box .familiar_box_items .form_box .login .login_box img, .familiar_box .familiar_box_items .form_box .email .email_box img, .familiar_box .familiar_box_items .form_box .describe .describe_box img, .familiar_box .familiar_box_items .form_box .social .social_prebox img, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box img, .familiar_box .familiar_box_items .form_box .dragdrop img, .familiar_box .familiar_box_items .form_box .sendorder img {
     width: 5vw;
   }
 }
 
-.familiar_box .familiar_box_items .form_box .login .login_box, .familiar_box .familiar_box_items .form_box .email .email_box, .familiar_box .familiar_box_items .form_box .describe .describe_box, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box {
+.familiar_box .familiar_box_items .form_box .login .login_box, .familiar_box .familiar_box_items .form_box .email .email_box, .familiar_box .familiar_box_items .form_box .describe .describe_box, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .text_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -364,7 +365,7 @@ html, body {
   }
 }
 
-.familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .info_text p {
+.familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .info_text p, .familiar_box .familiar_box_items .form_box .sendorder .s_button p {
   margin: 1vw auto;
   font-size: 1.3vw;
   font-family: "Oswald";
@@ -373,48 +374,117 @@ html, body {
 }
 
 @media (max-width: 1200px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .info_text p {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .info_text p, .familiar_box .familiar_box_items .form_box .sendorder .s_button p {
     font-size: 1.9vw;
   }
 }
 
 @media (max-width: 768px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .info_text p {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .info_text p, .familiar_box .familiar_box_items .form_box .sendorder .s_button p {
     font-size: 2.6vw;
   }
 }
 
 @media (max-width: 425px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .info_text p {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box .info_text p, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .info_text p, .familiar_box .familiar_box_items .form_box .sendorder .s_button p {
     font-size: 3.5vw;
     margin: 2vw auto;
   }
 }
 
-.familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box {
+.familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box, .familiar_box .familiar_box_items .form_box .dragdrop, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox, .familiar_box .familiar_box_items .form_box .sendorder, .familiar_box .familiar_box_items .form_box .sendorder .s_button {
   margin: 0 auto 1vw auto;
   width: 75%;
   border: 2px solid #8c5858;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 @media (max-width: 1200px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box, .familiar_box .familiar_box_items .form_box .dragdrop, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox, .familiar_box .familiar_box_items .form_box .sendorder, .familiar_box .familiar_box_items .form_box .sendorder .s_button {
     width: 76%;
     border: 1px solid #8c5858;
   }
 }
 
 @media (max-width: 768px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box, .familiar_box .familiar_box_items .form_box .dragdrop, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox, .familiar_box .familiar_box_items .form_box .sendorder, .familiar_box .familiar_box_items .form_box .sendorder .s_button {
     width: 77%;
     border: 1px solid #8c5858;
   }
 }
 
 @media (max-width: 425px) {
-  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box {
+  .familiar_box .familiar_box_items .form_box .social .social_prebox, .familiar_box .familiar_box_items .form_box .social .social_prebox .social_box, .familiar_box .familiar_box_items .form_box .dragdrop, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox, .familiar_box .familiar_box_items .form_box .sendorder, .familiar_box .familiar_box_items .form_box .sendorder .s_button {
     width: 83%;
     border: 1px solid #8c5858;
+  }
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box {
+  margin: 0 auto 3% auto;
+  width: 75%;
+  border: 2px dashed #8c5858;
+}
+
+@media (max-width: 1200px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box {
+    width: 76%;
+    border: 1px dashed #8c5858;
+  }
+}
+
+@media (max-width: 768px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box {
+    width: 77%;
+    border: 1px dashed #8c5858;
+  }
+}
+
+@media (max-width: 425px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box {
+    width: 83%;
+    border: 1px dashed #8c5858;
+  }
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target:hover {
+  display: block;
+  padding: 3.5vw 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5vw;
+  background-color: #8c5858;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+@media (max-width: 1200px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target:hover {
+    padding: 5vw 0px;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target:hover {
+    padding: 6vw 0px;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target, .familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target:hover {
+    padding: 7vw 0px;
+    font-size: 4vw;
   }
 }
 
@@ -441,8 +511,54 @@ html, body {
   margin-bottom: 0;
 }
 
-.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_box img {
+.familiar_box .familiar_box_items .form_box .dragdrop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop img {
   margin-bottom: auto;
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox {
+  width: 100%;
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .dragdrop_box .fs-upload-target:hover {
+  color: #fff;
+  background-color: #521e1e;
+}
+
+.familiar_box .familiar_box_items .form_box .dragdrop .dragdrop_prebox .fs-upload-dropping {
+  background-color: #fff;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.familiar_box .familiar_box_items .form_box .sendorder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+}
+
+.familiar_box .familiar_box_items .form_box .sendorder .s_button {
+  background-color: #430000;
+}
+
+.familiar_box .familiar_box_items .form_box .sendorder .s_button p {
+  text-transform: uppercase;
+}
+
+.familiar_box .familiar_box_items .form_box .sendorder .s_button:hover {
+  background-color: #521e1e;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
